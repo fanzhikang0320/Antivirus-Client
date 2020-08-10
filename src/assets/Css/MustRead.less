@@ -1,0 +1,102 @@
+.must-read-wrapper {
+    // font-family: Avenir;
+    width: @right;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #ECEAEA;
+    padding: 0px 18px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    .title {
+        font-size: 16px;
+        color: #1CB2C5;
+        padding-bottom: 5px;
+        margin-top: 14px;
+        border-bottom: 1px solid #E6E4E4;
+    }
+    .read-list {
+
+        li {
+            position: relative;
+            padding-bottom: 8px;
+            margin-top: 12px;
+
+            border-bottom: 1px solid rgba(150, 144, 144,.24);
+            &:nth-last-of-type(1) {
+                border: none;
+            }
+            .date-box {
+                width: 40px;
+                height: 36px;
+                background-color: #266C88;
+                color: #ffffff;
+                font-size: 14px;
+                // font-family: Avenir;
+                position: absolute;
+                top: 0;
+                left: 16px;
+                span {
+                    display: block;
+                    text-align: center;
+                }
+                &::after {
+                    position: absolute;
+                    left: 0;
+                    bottom: -22px;
+                    width: 0;
+                    height: 0;
+                    content: '';
+                    border-top: 11px solid #266C88;
+                    border-bottom: 11px solid transparent;
+                    border-left: 20px solid transparent;
+                    border-right: 20px solid transparent;
+                
+                }
+            }
+            .pic {
+                display: block;
+                width: 242px;
+                height: 157px;
+                border-radius: 2px;
+                // background-color: blue;
+            }
+            .question {
+                font-size: 14px;
+                color: #0A5C7B;
+                font-weight: bolder;
+                margin: 8px 0px;
+            }
+            .desc {
+                font-family: 'Open Sans';
+                font-size: 14px;
+                color: #707070;
+                line-height: 19px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+
+
+
+            }
+            .more {
+                text-align: right;
+                margin-top: 6px;
+                .read-more {
+                    text-align: right;
+                    font-family: Tahoma;
+                    font-size: 12px;
+                    color: #0E5C7B;
+                    text-decoration: none;
+                    border-bottom: 1px solid #0E5C7B;
+                    &:hover {
+                        color: #66a5af;
+                        border-bottom: 1px solid #66a5af;
+                    }
+                }
+            }
+
+        }
+    }
+}

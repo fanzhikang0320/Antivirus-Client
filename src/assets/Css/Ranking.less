@@ -1,0 +1,233 @@
+
+
+.ranking-wrapper {
+    .ranking-item {
+        width: 720px;
+        min-height: 200px;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        border-radius: 5px;
+        border: 1px solid #DBD7D7;
+        padding-bottom: 22px;
+        margin: 14px 0px;
+        transform: scale(1);
+        transition: all linear 0.15s;
+        // position: relative;
+        &:hover {
+            box-shadow: 0px 3px 6px rgba(0,0,0,.16);
+            transform: scale(1.02);
+        }
+        .ranking-top {
+            width: 100%;
+            position: relative;
+            .corner {
+                display: inline-block;
+                width: 65px;
+                height: 32px;
+                line-height: 32px;
+                font-size: 16px;
+                color: #ffffff;
+                background-color: #128490;
+                
+                vertical-align: middle;
+                margin-right: 24px;
+                position: relative;
+                .text {
+                    width: 65px;
+                    height: 32px;
+                    line-height: 32px;
+                    text-align: center;
+                    display: inline-block;
+                }
+                .trangle {
+                    display: none;
+                }
+            }
+            .logo {
+                position: absolute;
+                left: 174px;
+                top: 13px;
+                height: 26px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .star-box {
+                // display: inline-block;
+                float: right;
+                vertical-align: middle;
+                display: flex;
+                align-items: center;
+                margin-top: 12px;
+                .score {
+                    font-size: 20px;
+                    // font-family: Tahoma;
+                    color: #707070;
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+                .star {
+                    vertical-align: middle;
+                    display: inline-block;
+                    width: 100px;
+                    height: 20px;
+                    margin-right: 15px;
+                    margin-top: 5px;
+                    // background-color: yellowgreen;
+                }
+            }
+        }
+        .ranking-bottom {
+            display: flex;
+            align-items: center;
+            // justify-content: space-between;
+            .ranking-left {
+                width: 145px;
+                border-right: 1px solid #DBD7D7;
+                height: 110px;
+                .img {
+                    display: inline-block;
+                    width: 82px;
+                    height: 110px;
+                    margin-left: 36px;
+                    // background-color: blue;
+                }
+            }
+            .ranking-center {
+                margin-left: 45px;
+                color: #707070;
+                width: 325px;
+                .desc {
+                    width: 310px;
+                    margin-top: 15px;
+                    line-height: 19px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    // color: rgb(198,42,53);
+                    color: #767676;
+                }
+                .list {
+
+                    li {
+                        font-size: 14px;
+                        margin: 14px 0px;
+                        img {
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 17px;
+                            height: 17px;
+                        }
+                        p {
+                            margin-left: 6px;
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                .download {
+                    color: #F49332;
+                    font-family: Tahoma;
+                    font-size: 14px;
+                    font-weight: bold;
+                    border-bottom: 1px solid #F49332;
+                    text-decoration: none;
+                    margin-left: 23px;
+                }
+            }
+            .ranking-right {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-left: 26px;
+                margin-right: 20px;
+                .price {
+                    font-size: 20px;
+                    text-align: center;
+                    // color: #8f959a;
+                    color: #767676;
+                    font-weight: bold;
+                    
+                }
+                .btn {
+                    display: block;
+                    margin: 20px 0px 10px 0px;
+                    width: 152px;
+                    height: 34px;
+                    border-radius: 30px;
+                    color: #ffffff;
+                    font-size: 16px;
+                    font-weight: bolder;
+                    // font-family: Avenir;
+                    text-align: center;
+                    line-height: 34px;
+                    text-decoration: none;
+                    background-color: #F49332;
+                    transform: scale(1);
+                    transition: transform linear 0.2s;
+                    &:hover {
+                        transform: scale(0.9);
+                        background-color: #f9a662;
+                    }
+                }
+                .read {
+                    text-decoration: none;
+                    font-size: 12px;
+                    color: #0A5C7B;
+                    border-bottom: 1px solid #0A5C7B;
+                    &:hover {
+                        color: #66a5af;
+                        border-bottom: 1px solid #66a5af;
+                    }
+                }
+            }
+        }
+        &.first-ranking {
+            .ranking-top {
+                .corner {
+                    width: 145px;
+                    height: 32px;
+                    font-size: 18px;
+                    background-color: #C62A35;
+                    margin-top: 5px;
+                }
+                .text { 
+                    width: 120px;
+                    height: 32px;
+                    font-size: 16px;
+                }
+                .trangle {
+                    display: inline-block;
+                    position: absolute;
+                    right: -1px;
+                    width: 0;
+                    height: 0;
+                    border-top: 16px solid transparent;
+                    border-left: 12px solid transparent;
+                    border-right: 12px solid #ffffff;
+                    border-bottom: 16px solid transparent;
+                }
+            }
+            .ranking-bottom {
+                .ranking-right {
+                    .price {
+                        color: #f40;
+                    }
+                    .btn {
+                        // background-color: #25B2C5;
+                        // color: #ffffff;
+                        .jiantou {
+                            display: inline-block;
+                            width: 15px;
+                            height: 15px;
+                            background-color: green;
+                        }
+                        span {
+                            vertical-align: middle;
+                            
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}

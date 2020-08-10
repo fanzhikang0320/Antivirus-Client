@@ -1,0 +1,94 @@
+.top-ten-wrapper {
+    .min_max_width();
+    margin: auto;
+    color: #707070;
+    // font-family: Tahoma;
+    .top-ten-top {
+        width: 100%;
+        border-bottom: 1px solid #707070;
+        // padding-bottom: 15px;
+        height: 40px;
+        position: relative;
+        .title {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+        a {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #707070;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    }
+    .topTen-list {
+        margin-top: 26px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 194px;
+            height: 251px;
+            box-sizing: border-box;
+            border: 1px solid #D0DADB;
+            background-color: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+            transform: scale(1);
+            padding: 0px 18px;
+            transition: transform 0.2s linear;
+            &:hover {
+                box-shadow: 3px 3px 6px rgba(0,0,0,.16);
+                transform: scale(1.02);
+            }
+            .logo {
+                display: block;
+                height: 66px;
+            }
+            .star {
+                margin-top: 10px;
+                width: 91px;
+                height: 20px;
+                display: block;
+            }
+            .score {
+                font-weight: bold;
+                font-size: 20px;
+                margin-top: 5px;
+            }
+            .line {
+                width: 100%;
+                margin: 10px 0px 24px 0px;
+                height: 1px;
+                background-color: #BBC8CA;
+            }
+            .review {
+                display: block;
+                width: 123px;
+                height: 35px;
+                border-radius: 8px;
+                line-height: 35px;
+                text-align: center;
+                color: #707070;
+                font-size: 16px;
+                text-decoration: none;
+                border: 1px solid #707070;
+                transition: all linear 0.12s;
+                box-shadow: 3px 3px 6px rgba(0,0,0,.16);
+                &:hover {
+                    background-color: #0A5C7B;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}

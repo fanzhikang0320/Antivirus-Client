@@ -1,0 +1,141 @@
+
+@keyframes spin {
+    from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+}
+
+.thumbnail-wrapper {
+    .min_max_width();
+    margin:auto;
+    margin-bottom: 160px;
+    .thumbnail-item {
+        width: 470px;
+        height: 484px;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        color: #707070;
+        margin: 0px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .top-content {
+            width: 430px;
+            height: 314px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .corner {
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                background-color: #25B2C5;
+                left: 0;
+                top: 0;
+            }
+            .title {
+                font-size: 18px;
+                color: #0E5C7B;
+                // font-family: Tahoma;
+                height: 60px;
+                width: 380px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                
+            }
+            .img-box {
+                width: 100%;
+                position: relative;
+                height: 262px;
+                margin-top: 30px;
+                .bg {
+                    height: 150px;
+                    width: 100%;
+                    background-color: #cedee4;
+                    position: absolute;
+                    z-index: -1;
+                    top: 50%;
+                    transform: translateY(-50%);            
+                }
+                .pic {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                    width: 350px;
+                    height: 200px;
+                    box-shadow: 5px 5px 5px rgba(0,0,0,.16);
+                }
+            }
+        }
+        
+        .content-box {
+            width: 380px;
+            .content {
+                height: 47px;
+                margin-top: 15px;
+                font-size: 14px;
+                font-family: Roboto;
+                line-height: 24px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+            .btn-box {
+                text-align: right;
+                margin-top: 4px;
+                a {
+                    text-decoration: none;
+                    color: #0E5C7B;
+                    font-size: 14px;
+                    // font-family: Avenir;
+                    border-bottom: 1px solid #0E5C7B;
+                    &:hover {
+                        color: #66a5af;
+                    }
+                }
+            }
+        }
+    }
+    .loading {
+        .loading-text {
+            position: relative;
+            .line {
+                height: 2px;
+                background-color: #ccc;
+            }
+            .text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                padding: 0 8px;
+                background-color: #fff;
+                transform: translate(-50%,-50%);
+                font-size: 22px;
+                font-weight: bold;
+                color: #cedee4;
+            }
+        }
+    }
+    .loading-box {
+        animation: spin 1s steps(8) infinite;
+        margin: auto;
+        width: 4px; 
+        height:4px;
+        border-radius: 100%;                      // 圆角
+        box-shadow: 0 -10px 0 1px #38c3ce,           // 上, 1px 扩展
+                    10px 0px #baf7f2,                // 右    
+                    0 10px #aaf9f5,                  // 下
+                    -10px 0 #77e8e8 ,                 // 左
+                                  
+                    -7px -7px 0 .5px #4edadd,        // 左上, 0.5px扩展
+                    7px -7px 0 1.5px #25b2c5,        // 右上, 1.5px扩展                    
+                    7px 7px #ccfeff,                 // 右下
+                    -7px 7px #90f4f1;                // 左下
+    }
+}

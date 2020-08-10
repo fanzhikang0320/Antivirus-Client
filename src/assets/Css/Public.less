@@ -1,0 +1,60 @@
+.min_max_width() {
+    min-width: 1020px;
+    max-width: 1020px;
+}
+@right: 280px;
+//清除浮动
+.clearfix::after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+//设置背景图片
+.backgroundImg(@url) {
+    background-image: url(@url);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+//不确定宽高，居中方式
+.center(no_confirm) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+}
+//display居中方式
+.center(display,@direction:row) {
+    display: flex;
+    flex-direction: @direction;
+    justify-content: center;
+    align-items: center;
+}
+//确定高度的居中方式
+.center(confirm) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50%;
+    margin-top: -50%;
+}
+// 文字居中
+.text_center(@height,@position:center) {
+    line-height: @height;
+    text-align: @position;
+}
+
+// 字体篇
+@font-face {
+    font-family: 'iconfont';  /* project id 1804866 */
+    src: url('//at.alicdn.com/t/font_1804866_hlc6yk59l0i.eot');
+    src: url('//at.alicdn.com/t/font_1804866_hlc6yk59l0i.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1804866_hlc6yk59l0i.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1804866_hlc6yk59l0i.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1804866_hlc6yk59l0i.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1804866_hlc6yk59l0i.svg#iconfont') format('svg');
+  }

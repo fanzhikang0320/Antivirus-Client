@@ -6,20 +6,20 @@ module.exports = {
 		const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
 		types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))
 	},
-	devServer: {
-		disableHostCheck: true,
-		proxy: {
-			'/api': {
-				changeOrigin: true,
-				ws: true,
-				target: 'http://192.168.50.203:12138',
-				pathRewrite: {
-					'^/api': '/'
-				}
-			}
+	// devServer: {
+	// 	disableHostCheck: true,
+	// 	proxy: {
+	// 		'/api': {
+	// 			changeOrigin: true,
+	// 			ws: true,
+	// 			target: 'http://192.168.50.203:12138',
+	// 			pathRewrite: {
+	// 				'^/api': '/'
+	// 			}
+	// 		}
 			
-		}
-	}
+	// 	}
+	// }
 }
 function addStyleResource(rule) {
 	rule.use('style-resource')

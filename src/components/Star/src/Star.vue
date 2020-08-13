@@ -25,6 +25,18 @@ export default {
             type: Number,
             default: 5
         },
+        imgsrc: {
+            type: String,
+            default: ''
+        },
+        starMargin: {
+            type: String,
+            default: '0px 1px'
+        },
+        starWidth: {
+            type: String,
+            default: '16px'
+        },
         //是否只作为显示，默认为true
         disabled: {
             type: Boolean,

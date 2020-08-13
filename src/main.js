@@ -10,7 +10,7 @@ import Star from '@/components/Star'
 Vue.use(Star)
 
 Vue.config.productionTip = false
-Axios.defaults.baseURL = '/api'
+// Axios.defaults.baseURL = '/api'
 Vue.use(VueAxios,Axios)
 
 

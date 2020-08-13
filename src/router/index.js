@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/Page/Home.vue'
+// import Home from '@/Page/Home.vue'
+import NewHome from '@/Page/NewHome.vue'
 Vue.use(Router)
 
 const routerPush = Router.prototype.push;
@@ -14,8 +15,13 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: NewHome
   },
+  // {
+  //   path: '/newHome',
+  //   name: 'newHome',
+  //   component: () => import('@/Page/NewHome.vue')
+  // },
   {
     path: '/about',
     name: 'about',

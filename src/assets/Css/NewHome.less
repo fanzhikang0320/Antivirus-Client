@@ -1,0 +1,663 @@
+
+@rootWidth: 1020px;
+@baseColor: #666666;
+
+.home-wrapper {
+    
+    .home-container {
+        width: @rootWidth;
+        color: @baseColor;
+        margin: auto;
+        .area-title {
+            font-family: 'Helvetica-bold';
+            color: #353535;
+            font-size: 30px;
+            margin-top: 70px;
+            margin-bottom: 20px;
+        }
+        .banner-area {
+            position: relative;
+            height: 330px;
+            width: 100%;
+            box-sizing: border-box;
+            .bg-picture {
+                position: absolute;
+                right: -120px;
+                height: 100%;
+                width: 600px;
+            }
+            .banner-content {
+                position: absolute;
+                z-index: 1;
+                width: 675px;
+                padding-top: 30px;
+                .page-title {
+                    font-size: 36px;
+                    color: #101010;
+                    font-family: 'Helvetica-bold';
+                    .blue {
+                        color: #0057f4;
+                    }
+                }
+                .line {
+                    display: block;
+                    width: 200px;
+                    height: 6px;
+                    background-color: rgb(213,213,213);
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                }
+                .banner-list-box {
+                    li {
+                        margin: 13px 0px;
+                        .icon {
+                            display: inline-block;
+                            width: 18px;
+                            height: 18px;
+                            background-image: url('../Image/duigou.svg');
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            vertical-align: middle;
+                            margin-right: 14px;
+                        }
+                        .text {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                .compatible-box {
+                    margin-top: 20px;
+                    .text {
+                        font-size: 18px;
+                        color: #353535;
+                        font-weight: bold;
+                        vertical-align: middle;
+                        margin-right: 15px;
+                    }
+                    img {
+                        display: inline-block;
+                        width: 22px;
+                        height: 22px;
+                        vertical-align: middle;
+                        margin: 0px 15px;
+                    }
+                }
+            }
+        }
+        .product-area {
+            margin-top: 20px;
+            .product-area-top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 14px;
+                color: #A4A2A2;
+                .disclosure-box {
+                    cursor: pointer;
+                    position: relative;
+                    .icon {
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        background-image: url('../Image/question.png');
+                        background-size: cover;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        vertical-align: middle;
+                        margin-right: 5px;
+                    }
+                    .text {
+                        vertical-align: middle;
+                    }
+                    .disclosure-text {
+                        position: absolute;
+                        display: none;
+                        top: 30px;
+                        width: 300px;
+                        padding: 10px;
+                        font-size: 12px;
+                        background-color: #ffffff;
+                        z-index: 4;
+                        box-shadow: 0px 2px 6px 0px rgba(0,0,0,.4);
+                        &::after, &::before {
+                            position: absolute;
+                            content: '';
+                            left: 80px;
+                            top: -18px;
+                            width: 0px;
+                            height: 0px;
+                            border-top: 9px solid transparent;
+                            border-left: 9px solid transparent;
+                            border-bottom: 9px solid #e7e3e3;
+                            border-right: 9px solid transparent;
+                        }
+                    }
+                }
+            }
+            .product-container {
+                a {
+                    text-decoration: none;
+                }
+                .product-item {
+                    position: relative;
+                    box-shadow: 0px 2px 6px 0px rgba(0,0,0,.4);
+                    min-height: 200px;
+                    margin: 10px 0px;
+                    transform: scale(1);
+                    transition:  all linear 0.1s;
+                    border: none;
+                    // .link-box {
+                        .most-corner {
+                            position: absolute;
+                            right: -8px;
+                            top: 20px;
+                            width: 208px;
+                            height: 30px;
+                            line-height: 30px;
+                            background-color: rgb(250,110,45);
+                            text-align: center;
+                            .text {
+                                color: #ffffff;
+                                font-size: 20px;
+                                font-family: 'Helvetica-bold';
+
+                            }
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                left: -1px;
+                                width: 0;
+                                height: 0;
+                                border-top: 15px solid transparent;
+                                border-bottom: 15px solid transparent;
+                                border-left: 12px solid #ffffff;
+                                border-right: 12px solid transparent;
+                            }
+                            &::after{
+                                content: '';
+                                position: absolute;
+                                right: 0px;
+                                top: -7px;
+                                width: 0;
+                                height: 0;
+                                border-top: 4px solid transparent;
+                                border-bottom:  4px solid rgb(250,110,105);
+                                border-left:  4px solid rgb(250,110,105);
+                                border-right:  4px solid transparent;
+                            }
+                        }
+                        .num-box {
+                            position: absolute;
+                            left: 0;
+                            height: 100%;
+                            width: 50px;
+                            background-color: #E3EEFF;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 32px;
+                            color: #666666;
+                            font-family: 'Helvetica-bold';
+                        }
+                        .product-content {
+                            margin-left: 50px;
+                            width: calc(100% - 50px);
+                            min-height: 100%;
+                            padding: 20px 0px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+                            
+                                .picture {
+                                    margin: 0px 60px;
+                                    display: block;
+                                    width: 95px;
+                                    height: 130px;
+                                    // background-color: blue;
+                                }
+                            
+                            
+                            .center-content {
+                                width: 360px;
+                                .logo {
+                                    display: block;
+                                    transform: translateX(-28px);
+                                    // width: 130px;
+                                    height: 40px;
+                                    // background-color: blue;
+                                    margin-bottom: 10px;
+                                }
+                                .list-box {
+                                    li {
+                                        margin: 8px 0px;
+                                        .icon {
+                                            display: inline-block;
+                                            width: 16px;
+                                            height: 16px;
+                                            margin-right: 15px;
+                                            background-image: url('../Image/merite-list.png');
+                                            background-repeat: no-repeat;
+                                            background-position: center center;
+                                            background-size: cover;
+                                            vertical-align: middle;
+                                        }
+                                        .text {
+                                            display: inline-block;
+                                            vertical-align: middle;
+                                            color: #666666;
+                                        }
+                                    }
+                                }
+                                .review {
+                                    margin-top: 26px;
+                                    color: #2F8FF3;
+                                    font-size: 14px;
+                                    border-bottom: 1px solid #2F8FF3;
+                                    &:hover {
+                                        color: #124d9b;
+                                        border-color: #124d9b;
+                                    }
+                                }
+                            }
+                            .score-content {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                .king {
+                                    display: block;
+                                    width: 60px;
+                                    height: 43px;
+                                    background-image: url('../Image/king.svg');
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                    background-position: center center;
+                                }
+                                .text {
+                                    color: #2F8FF3;
+                                    font-size: 22px;
+                                    font-weight: bold;
+                                }
+                                .score-desc {
+                                    color: #9B9B9B;
+                                    font-size: 20px;
+                                    .score {
+                                        font-size: 50px;
+                                        color: #666666;
+                                    }
+                                }
+                                .outstanding {
+                                    font-size: 22px;
+                                    color: #FF7405;
+                                }
+                            }
+                            .right-content {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+
+                                .btn {
+                                    display: block;
+                                    font-weight: bold;
+                                    width: 136px;
+                                    height: 40px;
+                                    border-radius: 24px;
+                                    background-color: #1C8FEC;
+                                    color: #ffffff;
+                                    font-size: 18px;
+                                    text-align: center;
+                                    line-height: 40px;
+                                    box-shadow: 0px 2px 6px 0px rgba(0,0,0,.4);
+                                    transition: all linear 0.2s;
+                                    &:hover {
+                                        box-shadow: none;
+                                        background-color: #124d9b;
+                                    }
+                                }
+                                .url {
+                                    margin-top: 10px;
+                                    font-size: 14px;
+                                    color: #666666;
+
+                                    &:hover {
+                                        border-bottom: 1px solid #666666;
+                                    }
+                                }
+                            }
+                        }
+                    // }
+                    &:hover {
+                        transform: scale(1.03);
+                    }
+                }
+            }
+        }
+        .how-area {
+            .how-container {
+                .how-list-box {
+                    margin: 35px 0px;
+                    .how-list-item {
+                        float: left;
+                        width: 500px;
+                        height: 186px;
+                        box-sizing: border-box;
+                        overflow: hidden;
+                        margin: 10px 0px;
+                        box-shadow: 0px 2px 6px 0px rgba(0,0,0,.4);
+                        transition: all linear 0.18s;
+                        transform: scale(1);
+                        .list-item-title-box {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+                            height: 50px;
+                            background-color: #E3EEFF;
+                            padding: 0 10px;
+                            box-sizing: border-box;
+                            .list-item-title {
+                                font-family: 'Helvetica-bold';
+                                font-size: 22px;
+                                color: #353535;
+                            }
+                            .icon {
+                                display: inline-block;
+                                width: 22px;
+                                height: 22px;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-position: center center;
+                                &.speed-icon {
+                                    background-image: url('../Image/h-1.png');
+                                }
+                                &.features-icon {
+                                    background-image: url('../Image/h-2.png');
+                                }
+                                &.easy-use-icon {
+                                    background-image: url('../Image/h-3.png');
+                                }
+                                &.money-icon {
+                                    background-image: url('../Image/h-4.png');
+                                }
+                            }
+                        }
+                        .list-item-content {
+                            font-size: 14px;
+                            padding: 10px;
+                            line-height: 23px;
+                            
+                        }
+                        &:nth-of-type(1), &:nth-of-type(3) {
+                            margin-right: 20px;
+                        }
+                        &:hover {
+                            transform: scale(1.02);
+                        }
+                    }
+                }
+                .how-content {
+                    line-height: 30px;
+    
+                }
+            }
+        }   
+        .most-popular-area {
+            .most-popular-area-title {
+                text-align: center;
+            }
+            .most-popular-container {
+                position: relative;
+                width: 100%;
+                height: 350px;
+             
+                .popular-item {
+                    position: absolute;
+                    width: 330px;
+                    height: 234px;
+                    top: 50%;
+                    transform: translateY(-50%) scale(1);
+                    box-sizing: border-box;
+                    border: 1px solid #1C8FEC;
+                    box-shadow: 0px 2px 6px 0px rgba(0,0,0,.4);
+                    padding: 7px;
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    transition: all ease-out 0.18s;
+                    
+                    .picture {
+                        margin-top: 15px;
+                        display: block;
+                        height: 53px;
+                    }
+                    .good-list-box {
+                        li {
+                            margin: 5px 0px;
+                            .icon {
+                                display: inline-block;
+                                width: 16px;
+                                height: 16px;
+                                margin-right: 7px;
+                                background-image: url('../Image/merite-list.png');
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                background-position: center center;
+                                vertical-align: middle;
+                            }
+                            .text {
+                                font-size: 16px;
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                    .star-box {
+                        width: 100px;
+                        height: 21px;
+                        margin-top: 10px;
+                    }
+                    .btn {
+                        display: block;
+                        width: 254px;
+                        height: 42px;
+                        margin-top: 7px;
+                        border-radius: 21px;
+                        background-color: #4AA4EC;
+                        color: #ffffff;
+                        text-align: center;
+                        font-size: 22px;
+                        line-height: 42px;
+                        font-weight: bold;
+                        text-decoration: none;
+                        box-shadow: 0px 2px 6px 0px rgba(0,0,0,.4);
+                        transition: all linear 0.1s;
+                        &:hover {
+                            box-shadow: none;
+                            background-color: #124d9b;
+                        }
+                    }
+                    &:nth-of-type(1) {
+                        left: 0;
+                    }&:nth-of-type(3) {
+                        right: 0;
+                    }
+                    &.center {
+                        width: 370px;
+                        height: 300px;
+                        padding: 10px;
+                        left: 50%;
+                        z-index: 1;
+                        // border: none;
+                        transform: translate(-50%,-50%);
+                        .good-list-box {
+                            li {
+                                .text {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                        .line {
+                            display: block;
+                            width: 150px;
+                            height: 1px;
+                            margin-top: 10px;
+                            margin-bottom: 14px;
+                            background-color: #bbbbbb;
+                        }
+
+                        .btn {
+                            background-color: #FF7405;
+                        }
+
+                    }
+                    &:nth-of-type(1):hover , &:nth-of-type(3):hover {
+                        transform: translateY(-50%) scale(1.03);
+                        // z-index: 3;
+                    }
+                    &.center:hover {
+                        transform: translate(-50%,-50%) scale(1.03);
+                        background-color: #F1F7FF;
+                        .btn {
+                            background-color: #FF5F19;
+                        }
+                        
+                    }
+                    // &:hover {
+                        
+                    //     z-index: 3;
+                    // }
+                }
+            }
+        }
+        .faq-area {
+            .faq-box {
+                .faq-item {
+                    margin: 10px 0px;
+                    .faq-item-top {
+                        height: 58px;
+                        line-height: 58px;
+                        background-color: #EFF4FB;
+                        transition: all linear 0.1s;
+                        position: relative;
+                        cursor: pointer;
+                        .sign-icon {
+                            display: inline-block;
+                            width: 22px;
+                            height: 22px;
+                            margin-left: 22px;
+                            margin-right: 50px;
+                            vertical-align: middle;
+                        }
+                        .faq-title {
+                            display: inline-block;
+                            font-size: 20px;
+                            font-family: 'Helvetica-bold';
+                            color: #353535;
+                            vertical-align: middle;
+                        }
+                        .close-icon {
+                            width: 16px;
+                            height: 16px;
+                            background-image: url('../Image/sort-bottom.svg');
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            background-size: cover;
+                            position: absolute;
+                            right: 22px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            transition: all linear 0.2s;
+                        }
+                        &:hover {
+                            background-color: #D9E8FD;
+                        }
+                    }
+                    .faq-item-content {
+                        display: none;
+                        line-height: 30px;
+                        
+                    }
+                }
+            }
+        }
+        .recommended-area {
+            margin-bottom: 150px;
+            .recommend-list-box {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                li {
+                    width: 330px;
+                    height: 190px;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    box-shadow: 0px 2px 6px 0px rgba(0,0,0,.4);
+                    
+                    padding: 16px;
+                    .picture {
+                        display: block;
+                        // width: 200px;
+                        height: 43px;
+                    }
+                    .desc {
+                        margin-top: 15px;
+                        margin-bottom: 6px;
+                        display: flex;
+                        .icon {
+                            display: inline-block;
+                            width: 19px;
+                            height: 19px;
+                            margin-top: 5px;
+                            margin-right: 7px;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-image: url('../Image/merite-list.png');
+                        }
+                        .text {
+                            width: 280px;
+                            font-weight: bold;
+                            min-height: 50px;
+                            font-size: 18px;
+                        }
+                        
+                    }
+                    .recommend-item-bottom {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        .star-box {
+                            width: 100px;
+                            margin-right: 58px;
+                            
+                        }
+                        .btn {
+                            display: block;
+                            width: 137px;
+                            height: 42px;
+                            border-radius: 25px;
+                            line-height: 42px;
+                            text-align: center;
+                            color: #ffffff;
+                            text-decoration: none;
+                            font-size: 22px;
+                            font-weight: bold;
+                            background-color: #FF7405;
+                            box-shadow: 0px 2px 6px 0px rgba(0,0,0,.4);
+                            transition: all linear 0.1s;
+                            &:hover {
+                                box-shadow: none;
+                                background-color: #f9a662;
+                            }
+                        }
+                    }
+                
+                }
+            }
+        }
+    }
+    
+}

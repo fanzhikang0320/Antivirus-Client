@@ -1,6 +1,6 @@
 <template>
   <nav class="menu-wrapper clearfix">
-    <img src="@/assets/Image/logo.svg" alt="Antivirus Reivew" class="logo">
+    <img src="@/assets/Image/logo.png" alt="Antivirus Reivew" class="logo">
     <ul class="menu clearfix">
         <li>
             <router-link :to="{name: 'home'}">Home</router-link>

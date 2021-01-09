@@ -1,9 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from '@/Page/Home.vue'
-import NewHome from '@/Page/NewHome.vue'
+// import Default from '@/layouts/default.vue'
+import Home from '@/pages/Index.vue'
 Vue.use(Router)
 
+const Default = (resolve) => {
+  require(['@/layouts/default.vue'],component => {
+
+    resolve(component);
+  })
+
+}
 const routerPush = Router.prototype.push;
 
 Router.prototype.push = function push(location) {
@@ -14,69 +21,75 @@ Router.prototype.push = function push(location) {
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: NewHome
-  },
-  // {
-  //   path: '/newHome',
-  //   name: 'newHome',
-  //   component: () => import('@/Page/NewHome.vue')
-  // },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('@/Page/About.vue')
-  },
-  {
-    path: '/article',
-    name: 'article',
-    component: () => import('@/Page/Article.vue'),
-    redirect: '/article/thumbnail',
+    component: Default,
     children: [
       {
-        path: 'thumbnail',
-        name: 'thumbnail',
-        component: () => import('@/components/Thumbnail.vue')
+        path: '',
+        name: 'home',
+        component: Home
       },
       {
-        path: 'detail',
-        name: 'detail',
-        component: () => import('@/components/Detail.vue')
+        path: 'about',
+        name: 'about',
+        component: (resolve) => {
+         
+          require(['@/pages/About.vue'],component => {
+            resolve(component);
+          })
+        }
+      },
+      {
+        path: 'article',
+        name: 'article',
+        component: () => import('@/pages/Article.vue'),
+        children: [
+          {
+            path: '',
+            name: 'thumbnail',
+            component: () => import('@/pages/Thumbnail.vue')
+          },
+          {
+            path: 'detail',
+            name: 'detail',
+            component: () => import('@/pages/Detail.vue')
+          }
+        ]
+      },
+      {
+        path: 'comparison',
+        name: 'comparison',
+        component: () => import('@/pages/Comparison.vue')
+      },
+      {
+        path: 'contact',
+        name: 'contact',
+        component: () => import('@/pages/Contact.vue')
+      },
+      {
+        path: 'privacy',
+        name: 'privacy',
+        component: () => import('@/pages/Privacy.vue')
+      },
+      {
+        path: 'review',
+        name: 'review',
+        component: () => import('@/pages/Review.vue')
       }
     ]
   },
-  {
-    path: '/comparison',
-    name: 'comparison',
-    component: () => import('@/Page/Comparison.vue')
-  },
-  {
-    path: '/contact',
-    name: 'contact',
-    component: () => import('@/Page/Contact.vue')
-  },
-  {
-    path: '/privacy',
-    name: 'privacy',
-    component: () => import('@/Page/Privacy.vue')
-  },
-  {
-    path: '/review',
-    name: 'review',
-    component: () => import('@/Page/Review.vue')
-  },
+  
   {
     path: '*',
     name: 'error',
-    component: () => import('@/Page/NotFound.vue')
+    component: () => import('@/layouts/error.vue')
   }
 ];
 
 
 
 const router = new Router({
-    // linkActiveClass: 'active',
-    linkExactActiveClass: 'active',
+    linkActiveClass: 'active',
+    // linkExactActiveClass: 'active',
     mode: 'history',
     routes
 });

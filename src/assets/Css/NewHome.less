@@ -32,7 +32,7 @@
                 width: 675px;
                 padding-top: 30px;
                 .page-title {
-                    font-size: 36px;
+                    font-size: 32px;
                     color: #101010;
                     font-family: 'Helvetica-bold';
                     .blue {
@@ -148,187 +148,286 @@
                     transform: scale(1);
                     transition:  all linear 0.1s;
                     border: none;
-                    // .link-box {
-                        .most-corner {
-                            position: absolute;
-                            right: -8px;
-                            top: 20px;
-                            width: 208px;
-                            height: 30px;
-                            line-height: 30px;
-                            background-color: rgb(250,110,45);
-                            text-align: center;
-                            .text {
-                                color: #ffffff;
-                                font-size: 20px;
-                                font-family: 'Helvetica-bold';
+                        
+                    .num-box {
+                        position: absolute;
+                        left: 0;
+                        height: 44px;
+                        width: 60px;
+                        background-color: #51A8FC;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 28px;
+                        color: #ffffff;
+                        font-family: 'Helvetica-bold';
+                    }
 
+                    .first-pic {
+                        
+                    position: absolute;
+                    height: 60px;
+                    left: 60px;
+                    bottom: 50px;
+
+
+                    }
+                    .product-content {
+                        margin-left: 50px;
+                        width: calc(100% - 50px);
+                        min-height: 100%;
+                        padding: 20px 0px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        
+                            .picture {
+                                margin: 0px 60px;
+                                display: block;
+                                width: 95px;
+                                height: 130px;
+                                // background-color: blue;
                             }
-                            &::before {
-                                content: '';
-                                position: absolute;
-                                left: -1px;
-                                width: 0;
-                                height: 0;
-                                border-top: 15px solid transparent;
-                                border-bottom: 15px solid transparent;
-                                border-left: 12px solid #ffffff;
-                                border-right: 12px solid transparent;
+                        
+                        
+                        .center-content {
+                            width: 360px;
+                            .logo {
+                                display: block;
+                                transform: translateX(-28px);
+                                // width: 130px;
+                                height: 40px;
+                                // background-color: blue;
+                                margin-bottom: 10px;
                             }
-                            &::after{
-                                content: '';
-                                position: absolute;
-                                right: 0px;
-                                top: -7px;
-                                width: 0;
-                                height: 0;
-                                border-top: 4px solid transparent;
-                                border-bottom:  4px solid rgb(250,110,105);
-                                border-left:  4px solid rgb(250,110,105);
-                                border-right:  4px solid transparent;
-                            }
-                        }
-                        .num-box {
-                            position: absolute;
-                            left: 0;
-                            height: 100%;
-                            width: 50px;
-                            background-color: #E3EEFF;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            font-size: 32px;
-                            color: #666666;
-                            font-family: 'Helvetica-bold';
-                        }
-                        .product-content {
-                            margin-left: 50px;
-                            width: calc(100% - 50px);
-                            min-height: 100%;
-                            padding: 20px 0px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-around;
-                            
-                                .picture {
-                                    margin: 0px 60px;
-                                    display: block;
-                                    width: 95px;
-                                    height: 130px;
-                                    // background-color: blue;
-                                }
-                            
-                            
-                            .center-content {
-                                width: 360px;
-                                .logo {
-                                    display: block;
-                                    transform: translateX(-28px);
-                                    // width: 130px;
-                                    height: 40px;
-                                    // background-color: blue;
-                                    margin-bottom: 10px;
-                                }
-                                .list-box {
-                                    li {
-                                        margin: 8px 0px;
-                                        .icon {
-                                            display: inline-block;
-                                            width: 16px;
-                                            height: 16px;
-                                            margin-right: 15px;
-                                            background-image: url('../Image/merite-list.png');
-                                            background-repeat: no-repeat;
-                                            background-position: center center;
-                                            background-size: cover;
-                                            vertical-align: middle;
-                                        }
-                                        .text {
-                                            display: inline-block;
-                                            vertical-align: middle;
-                                            color: #666666;
-                                        }
+                            .list-box {
+                                li {
+                                    margin: 8px 0px;
+                                    display: flex;
+                                    position: relative;
+                                    .icon {
+                                        display: inline-block;
+                                        flex-shrink: 0;
+                                        margin-top: 4px;
+                                        width: 16px;
+                                        height: 16px;
+                                        margin-right: 15px;
+                                        background-image: url('../Image/merite-list.png');
+                                        background-repeat: no-repeat;
+                                        background-position: center center;
+                                        background-size: cover;
+                                        vertical-align: middle;
                                     }
-                                }
-                                .review {
-                                    margin-top: 26px;
-                                    color: #2F8FF3;
-                                    font-size: 14px;
-                                    border-bottom: 1px solid #2F8FF3;
-                                    &:hover {
-                                        color: #124d9b;
-                                        border-color: #124d9b;
-                                    }
-                                }
-                            }
-                            .score-content {
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                .king {
-                                    display: block;
-                                    width: 60px;
-                                    height: 43px;
-                                    background-image: url('../Image/king.svg');
-                                    background-repeat: no-repeat;
-                                    background-size: cover;
-                                    background-position: center center;
-                                }
-                                .text {
-                                    color: #2F8FF3;
-                                    font-size: 22px;
-                                    font-weight: bold;
-                                }
-                                .score-desc {
-                                    color: #9B9B9B;
-                                    font-size: 20px;
-                                    .score {
-                                        font-size: 50px;
+                                    .text {
+                                        
+                                        
+                                        display: inline-block;
+                                        vertical-align: middle;
                                         color: #666666;
                                     }
+
+                                    // &:nth-of-type(1) {
+                                    //     font-weight: bold;
+                                    //     height: 23px;
+                                    //     .icon {
+                                    //         display: none;
+                                    //     }
+                                    //     .text {
+                                    //         position: absolute;
+                                    //         left: 0px;
+                                    //         width: 500px;
+                                    //         color: #101010;
+                                    //     }
+                                    // }
                                 }
-                                .outstanding {
-                                    font-size: 22px;
-                                    color: #FF7405;
+                            }
+                            .review {
+                                margin-top: 26px;
+                                color: #2F8FF3;
+                                font-size: 14px;
+                                border-bottom: 1px solid #2F8FF3;
+                                &:hover {
+                                    color: #124d9b;
+                                    border-color: #124d9b;
+                                }
+                            }
+                        }
+                        .score-content {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            .king {
+                                display: block;
+                                width: 60px;
+                                height: 43px;
+                                background-image: url('../Image/king.svg');
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-position: center center;
+                            }
+                            .text {
+                                color: #2F8FF3;
+                                font-size: 22px;
+                                font-weight: bold;
+                            }
+                            .score-desc {
+                                color: #9B9B9B;
+                                font-size: 20px;
+                                .score {
+                                    font-size: 50px;
+                                    color: #666666;
+                                }
+                            }
+                            .outstanding {
+                                font-size: 22px;
+                                color: #FF7405;
+                            }
+                        }
+                        .right-content {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            .btn {
+                                display: block;
+                                font-weight: bold;
+                                width: 150px;
+                                height: 54px;
+                                border-radius: 12px;
+                                background-color: #1C8FEC;
+                                color: #ffffff;
+                                font-size: 18px;
+                                text-align: center;
+                                line-height: 54px;
+                                box-shadow: 0px 2px 6px 0px rgba(0,0,0,.4);
+                                transition: all linear 0.2s;
+                                &:hover {
+                                    box-shadow: none;
+                                    background-color: #124d9b;
+                                }
+                            }
+                            .url {
+                                margin-top: 10px;
+                                font-size: 14px;
+                                color: #666666;
+
+                                // &:hover {
+                                //     border-bottom: 1px solid #666666;
+                                // }
+                            }
+                        }
+                    }
+                    &:hover {
+                        transform: scale(1.03);
+                    }
+
+                    &:nth-of-type(1) {
+                        .num-box {
+                            width: 223px;
+                            height: 55px;
+                            background-image: url('../Image/corner-bg.png');
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                            background-position: center center;
+                            background-color: transparent;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            .num {
+                                margin-top: 8px;
+                                margin-left: 16px;
+                            }
+                            .text {
+                                margin-left: 15px;
+                                margin-top: 11px;
+                                font-size: 20px;
+                            }
+                        }
+
+                        .product-content {
+                            padding: 40px 0px;
+
+                            .img-box {
+                                position: relative;
+                                width: 223px;
+                                height: 130px;
+
+                                .picture {
+                                    height: 196px;
+                                    position: absolute;
+                                    width: 150px;
+                                    left: -39px;
+                                    top: -18px;
+                                
+                                }
+                            }
+                            .center-content {
+                                .list-box {
+                                    li {
+                                        &:nth-of-type(1) {
+                                            font-weight: bold;
+                                            height: 50px;
+                                            .icon {
+                                                display: none;
+                                            }
+                                            .text {
+                                                position: absolute;
+                                                left: 0px;
+                                                width: 500px;
+                                                color: #101010;
+                                            }
+                                        }
+                                    }
                                 }
                             }
                             .right-content {
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
 
                                 .btn {
-                                    display: block;
-                                    font-weight: bold;
-                                    width: 136px;
-                                    height: 40px;
-                                    border-radius: 24px;
-                                    background-color: #1C8FEC;
-                                    color: #ffffff;
-                                    font-size: 18px;
-                                    text-align: center;
-                                    line-height: 40px;
-                                    box-shadow: 0px 2px 6px 0px rgba(0,0,0,.4);
-                                    transition: all linear 0.2s;
-                                    &:hover {
-                                        box-shadow: none;
-                                        background-color: #124d9b;
-                                    }
-                                }
-                                .url {
-                                    margin-top: 10px;
-                                    font-size: 14px;
-                                    color: #666666;
+                                    background-color: #FF6800;
 
                                     &:hover {
-                                        border-bottom: 1px solid #666666;
+                                        background-color: #ff9e5b;
                                     }
                                 }
                             }
                         }
-                    // }
-                    &:hover {
-                        transform: scale(1.03);
+                    }
+                    &:nth-of-type(2) ,&:nth-of-type(3){
+                        .product-content {
+                            .center-content {
+                                .list-box {
+                                    li {
+                                        &:nth-of-type(1) {
+                                            font-weight: bold;
+                                            height: 30px;
+                                            .icon {
+                                                display: none;
+                                            }
+                                            .text {
+                                                position: absolute;
+                                                left: 0px;
+                                                width: 500px;
+                                                color: #101010;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(3){
+                        .product-content {
+                            .center-content {
+                                .list-box {
+                                    li {
+                                        &:nth-of-type(1) {
+                                            font-weight: bold;
+                                            height: 30px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -431,13 +530,16 @@
                     .picture {
                         margin-top: 15px;
                         display: block;
-                        height: 53px;
+                        height: 46px;
                     }
                     .good-list-box {
                         li {
                             margin: 5px 0px;
+                            display: flex;
                             .icon {
                                 display: inline-block;
+                                flex-shrink: 0;
+                                margin-top: 2px;
                                 width: 16px;
                                 height: 16px;
                                 margin-right: 7px;
@@ -464,7 +566,7 @@
                         width: 254px;
                         height: 42px;
                         margin-top: 7px;
-                        border-radius: 21px;
+                        border-radius: 6px;
                         background-color: #4AA4EC;
                         color: #ffffff;
                         text-align: center;
@@ -638,7 +740,7 @@
                             display: block;
                             width: 137px;
                             height: 42px;
-                            border-radius: 25px;
+                            border-radius: 6px;
                             line-height: 42px;
                             text-align: center;
                             color: #ffffff;

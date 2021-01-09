@@ -1,0 +1,468 @@
+{
+    "data": [
+        {
+            "name": "TOTALAV",
+            "key": "totalav",
+            "link": "https://hotsale.featuredproduct.news/9bc22aae-0a5b-4bfe-867e-6628c307f233",
+            "website": {
+                "link": "https://track.totalav.com",
+                "name": "totalav.com"
+            },
+            "reviews": 4228,
+            "logo": "/data/img/total-av.png",
+            "picture": "/data/img/total-av-p.png",
+            "aside_pic": "/data/img/total-av-a.png",
+            "coop_pic": "/data/img/top.png",
+            "price": "19.00",
+            "history_price": "99",
+            "slogan": "Best antivirus of 2020, providing excellent antivirus protection. Trusted by 25 million users around the world.",
+            "aside_slogan": "Best antivirus of 2020，providing  excellent antivirus protection",
+            "Protection_rate": {
+                "score": "9.5",
+                "max": 10
+            },
+            "privacy_rate": {
+                "score": "9.6",
+                "max": 10
+            },
+            "rate": {
+                "score": "9.8",
+                "max": 10
+            },
+            "meritList": [
+                {
+                    "text": "Comprehensive malware protection"
+                },
+                {
+                    "text": "Real-time Antivirus protection"
+                },
+                {
+                    "text": "Browser cleaner & manager"
+                },
+                {
+                    "text": "30-day money back guarantee"
+                },
+                {
+                    "text": "Protect mobile devices from physical theft"
+                },
+                {
+                    "text": "Save 80% on the newest 2021 Edition via our link"
+                }
+                
+            ]
+        },
+        
+        {
+            "name": "Norton",
+            "key": "",
+            "link": "https://www.kqzyfj.com/click-100176895-13681576",
+            "website": {
+                "link": "https://www.kqzyfj.com",
+                "name": "norton.com"
+            },
+            "reviews": 3923,
+            "logo": "/data/img/norton.png",
+            "picture": "/data/img/norton-p.png",
+            "aside_pic": "/data/img/norton-a.png",
+            "coop_pic": "",
+            "price": "29.99",
+            "history_price": "10",
+            "slogan": "High accuracy, low-impact antivirus with online backup capabilities.",
+            "aside_slogan": "",
+            "Protection_rate": {
+                "score": "9.6",
+                "max": 10
+            },
+            "privacy_rate": {
+                "score": "9.5",
+                "max": 10
+            },
+            "rate": {
+                "score": "9.5",
+                "max": 10
+            },
+            "meritList": [
+                {
+                    "text": "Advanced device security"
+                },
+                {
+                    "text": "60-days money-back guarantee"
+                },
+                {
+                    "text": "100% virus protection promise"
+                },
+                {
+                    "text": "Secure vpn for online privacy"
+                },
+                {
+                    "text": "Parental control"
+                },
+                {
+                    "text": "Dark web monitoring"
+                }
+            ]
+        },
+        {
+            "name": "McAfee",
+            "key": "",
+            "link": "https://secureconv-dl.com/?a=126374&c=227127&mt=4",
+            "website": {
+                "link": "",
+                "name": ""
+            },
+            "reviews": 3825,
+            "logo": "/data/img/McAfee.png",
+            "picture": "/data/img/McAfee-p.png",
+            "aside_pic": "/data/img/McAfee-a.png",
+            "coop_pic": "",
+            "price": "24.99",
+            "history_price": "10",
+            "slogan": "Powerful security against numerous forms of online or offline fangers.",
+            "aside_slogan": "",
+            "Protection_rate": {
+                "score": "9.4",
+                "max": 10
+            },
+            "privacy_rate": {
+                "score": "9.5",
+                "max": 10
+            },
+            "rate": {
+                "score": "9.3",
+                "max": 10
+            },
+            "meritList": [
+                {
+                    "text": "Fix security issues on PCs remotely"
+                },
+                {
+                    "text": "Prevent scam attempts from reaching you"
+                },
+                {
+                    "text": "Clean up and optimize your computer"
+                },
+                {
+                    "text": "Prevent and revocer from identity theft"
+                },
+                {
+                    "text": "Protects your usernames and passwords"
+                },
+                {
+                    "text": "Award-winning detection features"
+                }
+            ]
+        },
+        {
+            "name": "Malwarebytes",
+            "key": "",
+            "link": "https://www.anrdoezrs.net/click-100176895-13801426",
+            "website": {
+                "link": "https://www.anrdoezrs.net",
+                "name": "malwarebytes.com"
+            },
+            "reviews": 3616,
+            "logo": "/data/img/malwarebytes.png",
+            "picture": "/data/img/malwarebytes-p.png",
+            "aside_pic": "/data/img/malwarebytes-a.png",
+            "coop_pic": "",
+            "price": "19.90",
+            "history_price": "10",
+            "slogan": "Get comprehensive protection for both Mac and PC.",
+            "aside_slogan": "Get comprehensive protection for both Mac and PC",
+            "Protection_rate": {
+                "score": "8.9",
+                "max": 10
+            },
+            "privacy_rate": {
+                "score": "8.7",
+                "max": 10
+            },
+            "rate": {
+                "score": "8.8",
+                "max": 10
+            },
+            "meritList": [
+                {
+                    "text": "Non-Programmer friendly"
+                },
+                {
+                    "text": "Secure your web browsing"
+                },
+                {
+                    "text": "Protect devices from all kinds of threats"
+                }
+                
+            ]
+        },
+        
+        {
+            "name": "BullGuard",
+            "key": "",
+            "link": "https://www.anrdoezrs.net/click-100176895-11744641",
+            "website": {
+                "link": "",
+                "name": "bullguard.com"
+            },
+            "reviews": 3323,
+            "logo": "/data/img/bullGuard.png",
+            "picture": "/data/img/bullGuard-p.png",
+            "aside_pic": "/data/img/bullGuard-a.png",
+            "coop_pic": "",
+            "price": "30.00",
+            "history_price": "10",
+            "slogan": "Extremely light on CPU and quick scan.",
+            "aside_slogan": "Extremely light on CPU and quick scan",
+            "Protection_rate": {
+                "score": "8.6",
+                "max": 10
+            },
+            "privacy_rate": {
+                "score": "8.4",
+                "max": 10
+            },
+            "rate": {
+                "score": "8.5",
+                "max": 10
+            },
+            "meritList": [
+                {
+                    "text": "Real-time security and updates"
+                },
+                {
+                    "text": "Great spam filter"
+                },
+                {
+                    "text": "Excellent ratings in Antiphishing"
+                },
+                {
+                    "text": "24/7 live chat support"
+                },
+                {
+                    "text": "Parental control protects children"
+                }
+            ]
+        },
+        {
+            "name": "Kaspersky",
+            "key": "",
+            "link": "https://www.dpbolvw.net/click-100176895-13804253",
+            "website": {
+                "link": "https://www.dpbolvw.net",
+                "name": "usa.kaspersky.com"
+            },
+            "reviews": 2254,
+            "logo": "/data/img/kaspersky.png",
+            "picture": "/data/img/kaspersky-p.png",
+            "aside_pic": "/data/img/kaspersky-a.png",
+            "coop_pic": "",
+            "price": "29.99",
+            "history_price": "10",
+            "slogan": "Comprehensive antivirus solutions thar suites all your security needs.",
+            "aside_slogan": "",
+            "Protection_rate": {
+                "score": "8.5",
+                "max": 10
+            },
+            "privacy_rate": {
+                "score": "8.3",
+                "max": 10
+            },
+            "rate": {
+                "score": "8.2",
+                "max": 10
+            },
+            "meritList": [
+                {
+                    "text": "Secure access of Internet"
+                },
+                {
+                    "text": "Security for files"
+                },
+                {
+                    "text": "Offer flexible control"
+                }
+            ]
+        },
+        
+        {
+            "name": "panda",
+            "key": "",
+            "link": "https://www.jdoqocy.com/click-100176895-10961367",
+            "website": {
+                "link": "https://www.jdoqocy.com",
+                "name": "pandasecurity.com"
+            },
+            "reviews": 2860,
+            "logo": "/data/img/panda.png",
+            "picture": "/data/img/panda-p.png",
+            "aside_pic": "/data/img/panda-a.png",
+            "coop_pic": "",
+            "price": "35.39",
+            "history_price": "10",
+            "slogan": "Powerful security against numerous forms of online or offline dangers.",
+            "aside_slogan": "",
+            "Protection_rate": {
+                "score": "7.8",
+                "max": 10
+            },
+            "privacy_rate": {
+                "score": "8.2",
+                "max": 10
+            },
+            "rate": {
+                "score": "7.8",
+                "max": 10
+            },
+            "meritList": [
+                {
+                    "text": "Quick & easy installation"
+                },
+                {
+                    "text": "Proficiently handles huge data"
+                },
+                {
+                    "text": "Makes data stretchy and customizable"
+                }
+            ]
+        },
+        {
+            "name": "PCPROTECT",
+            "key": "",
+            "link": "https://track.pcprotect.com/5fc0aebbbac96/click",
+            "website": {
+                "link": "https://track.pcprotect.com",
+                "name": "pcprotect.com"
+            },
+            "reviews": 2546,
+            "logo": "/data/img/pcprotect.png",
+            "picture": "/data/img/pcprotect-p.png",
+            "aside_pic": "/data/img/pcprotect-a.png",
+            "coop_pic": "",
+            "price": "24.95",
+            "history_price": "10",
+            "slogan": "Award-winning antivirus, received 4.6/5 Trustscore on Trustpilot.",
+            "aside_slogan": "Award-winning antivirus, received 4.6/5 Trustscore on Trustpilot.",
+            "Protection_rate": {
+                "score": "7.7",
+                "max": 10
+            },
+            "privacy_rate": {
+                "score": "7.6",
+                "max": 10
+            },
+            "rate": {
+                "score": "7.5",
+                "max": 10
+            },
+            "meritList": [
+                {
+                    "text": "Real-Time Antivirus safety"
+                },
+                {
+                    "text": "Safety from phishing scams"
+                },
+                {
+                    "text": "System performance optimization"
+                },
+                {
+                    "text": "Does not hog resources or slow your down"
+                },
+                {
+                    "text": "One of the most accurate malware detector"
+                }
+                
+            ]
+        },
+        {
+            "name": "Intego",
+            "key": "",
+            "link": "https://www.jdoqocy.com/click-100176895-14336004",
+            "website": {
+                "link": "",
+                "name": "jdoqocy.com"
+            },
+            "reviews": 2234,
+            "logo": "/data/img/intego.png",
+            "picture": "/data/img/intego-p.png",
+            "aside_pic": "/data/img/intego-a.png",
+            "coop_pic": "",
+            "price": "24.99",
+            "history_price": "10",
+            "slogan": "Perfect and highly capable Mac antivirus for an average mac OS user.",
+            "aside_slogan": "",
+            "Protection_rate": {
+                "score": "7.3",
+                "max": 10
+            },
+            "privacy_rate": {
+                "score": "7.4",
+                "max": 10
+            },
+            "rate": {
+                "score": "7.2",
+                "max": 10
+            },
+            "meritList": [
+                {
+                    "text": "Antivirus, anti-phishing and anti-spyware"
+                },
+                {
+                    "text": "Firewall network protection for home and on the go"
+                },
+                {
+                    "text": "Protects sensitive personal information"
+                },
+                {
+                    "text": "Mac Cleaner speeds up and organizes your Mac"
+                },
+                {
+                    "text": "Parental controls with website and application blocking"
+                }
+            ]
+        },
+        
+        {
+            "name": "eseT",
+            "key": "",
+            "link": "https://www.anrdoezrs.net/click-100176895-11676352",
+            "website": {
+                "link": "https://www.anrdoezrs.net",
+                "name": "eset.com"
+            },
+            "reviews": 2026,
+            "logo": "/data/img/eset.png",
+            "picture": "/data/img/eset-p.png",
+            "aside_pic": "/data/img/.png",
+            "coop_pic": "",
+            "price": "49.90",
+            "history_price": "10",
+            "slogan": "Well-balanced security with powerful antivirus capabilities.",
+            "aside_slogan": "",
+            "Protection_rate": {
+                "score": "7.3",
+                "max": 10
+            },
+            "privacy_rate": {
+                "score": "7.5",
+                "max": 10
+            },
+            "rate": {
+                "score": "7.3",
+                "max": 10
+            },
+            "meritList": [
+                {
+                    "text": "Good Anti-Virus and firewall ability"
+                },
+                {
+                    "text": "Remote management working well"
+                },
+                {
+                    "text": "Excellent Anti-Spyware and Anti-Phishing"
+                }
+                
+            ]
+        }
+        
+    ]
+}

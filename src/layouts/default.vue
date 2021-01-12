@@ -5,6 +5,7 @@
     </header>
     <main >
         <router-view></router-view>
+        <Message :src="imgSrc" :link="link" :freeLink="freeLink" :duration="20000"/>
     </main>
     <footer>
         <Footer/>
@@ -16,11 +17,19 @@
 
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-
+import Message from '@/components/Message'
 export default {
     components: {
         Nav,
-        Footer
+        Footer,
+        Message
+    },
+    data() {
+      return {
+        imgSrc: '/public/client/data/img/Message.png',
+        link: 'https://track.totalav.com/5f3e31dcba9f9/click',
+        freeLink: 'https://track.totalav.com/5f030579e4a47/click'
+      }
     }
 }
 </script>

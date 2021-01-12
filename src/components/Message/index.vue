@@ -1,14 +1,23 @@
 <template>
   <div class="mask-wrapper">
       <div class="mask-content">
-          <a :href="mainLink" class="link-box" target="_blank" rel="noopener noreferrer">
+          <div class="link-box" target="_blank" rel="noopener noreferrer">
              
-             <img src="@/assets/Image/totalav-message.png" style="height: 530px" alt="top10antivirus">
-             <a :href="mainLink" target="_blank" class="free-btn" rel="noopener noreferrer nofollow">
-                 Claim discount Now
-             </a>
-          </a>
-          <span class="close"></span>
+             <img :src="src" style="height: 530px;min-width:850px;" alt="thebestantivirus">
+             <div class="link-box-container">
+                <a :href="link" target="_blank" rel="noopener noreferrer nofollow" class="btn">
+                    <span class="text">Claim 80% off Now</span>
+                    <span class="iconfont">&#xe602;</span>
+                </a>
+                <p class="small">not sure yet ......? You can also</p>
+                <a :href="freeLink" target="_blank" rel="noopener noreferrer nofollow"  class="btn free-btn">
+                    <span class="text">Get the free Trail</span>
+                    <span class="iconfont">&#xe602;</span>
+                </a>
+                <span class="close-text" @click="closeAlert">I don't need PC protect, thanks</span>
+                </div>
+            </div>
+          <span class="close" @click="closeAlert"></span>
       </div>
   </div>
 </template>
@@ -16,10 +25,25 @@
 <script>
 import $ from 'jquery'
 export default {
-    name: 'Alert',
+    name: 'Message',
+    props: {
+        src: {
+            type: String
+        },
+        link: {
+            type: String
+        },
+        freeLink: {
+            type: String
+        },
+        duration: {
+            type: Number,
+            default: 20000
+        }
+    },
     data() {
         return {
-            mainLink: 'https://www.dpbolvw.net/click-100176895-13681576?sid=best',
+            // mainLink: 'https://www.dpbolvw.net/click-100176895-13681576?sid=best',
             timer: null,
             count: 0
         }
@@ -30,7 +54,7 @@ export default {
                 display: 'block'
             })
             $('.mask-content').animate({
-                top: '50%',
+                top: '45%',
                 opacity: 1
             },300)
 
@@ -39,6 +63,7 @@ export default {
             $('.mask-wrapper').css({
                 display: 'none'
             })
+            clearTimeout(this.timer);
         }
     },
     mounted() {
@@ -55,16 +80,8 @@ export default {
                 })
             })
             // clearTimeout(this.timer);
-        },15000)
+        },this.duration)
 
-        $('.close').on('click',() => {
-            this.closeAlert();
-            clearTimeout(this.timer);
-        })
-        $('body').on('click',() => {
-            this.closeAlert();
-            clearTimeout(this.timer);
-        })
     },
     beforeDestroy() {
         clearTimeout(this.timer);

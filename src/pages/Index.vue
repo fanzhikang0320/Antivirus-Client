@@ -81,7 +81,9 @@
             <div class="rate-box">
               <div class="rate-content">
                 <span class="score">{{item.rate.score}}</span>
-                <span class="evalute">OUTSTANDING</span>
+                <span class="evalute" v-if="index < 3">OUTSTANDING</span>
+                <span class="evalute" v-if="index >= 3 && index < 6">VERY GOOD</span>
+                <span class="evalute" v-if="index >= 6 ">GOOD</span>
                 <Rate disabled allow-half class="my-rate" :value="Number(conversionScore(item.rate.score,item.rate.max))"/>
                 <span class="reviews">Based on {{item.reviews}} reviews</span>
                 <!-- <span class="text">PLEASE VOTE</span> -->

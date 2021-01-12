@@ -28,7 +28,7 @@
                 border-bottom: 1px solid #f1f5f9;
             }
             .logo {
-                height: 50px;
+                height: 60px;
                 min-width: 100px;
             }
 
@@ -57,9 +57,14 @@
                 font-weight: bolder;
                 text-decoration: none;
                 background-color: #f1f6fe;
-
+                .text {
+                    transform: translateX(0);
+                    transition: transform linear 0.1s;
+                }
                 .iconfont {
                     display: inline-block;
+                    transform: translateX(0);
+                    transition: transform linear 0.1s;
                     width: 30px;
                     height: 30px;
                     margin-left: 10px;
@@ -78,6 +83,14 @@
                     .iconfont {
                         background-color: #ff8327;
                         color: #fff;
+                    }
+                }
+                &:hover {
+                    .text {
+                        transform: translateX(-4px);
+                    }
+                    .iconfont {
+                        transform: translateX(4px);
                     }
                 }
             }

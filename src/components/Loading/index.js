@@ -10,7 +10,7 @@ const instance = new LoadingConstructor({
 
 instance.show = false;
 
-const loading = {
+export const loading = {
     show() { // 显示方法
       instance.show = true
       document.body.appendChild(instance.$el)
@@ -19,7 +19,7 @@ const loading = {
       instance.show = false
     }
   }
-  
+
   export default {
     install() {
       if (!Vue.$loading) {

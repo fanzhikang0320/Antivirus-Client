@@ -48,12 +48,8 @@ export default {
     methods: {
         //获取
         getArticleThumbnail(currentPage) {
-            // this.isLoading = true;
-            this.$loading.show();
             getArticleList({offset: (currentPage - 1) * this.limit,limit: this.limit})
                 .then(result => {
-                    // this.isLoading = false;
-                    this.$loading.hide();
                     if (result.data.code == 0) {
                         
                         this.total = result.data.data.count;
@@ -61,9 +57,10 @@ export default {
 
                         if (result.data.data.count < currentPage * this.limit) {
                             this.haveData = false;
-                            // this.$loading.
-                            // this.isLoading = true;
-                            window.onscroll = ''
+                            return;
+                        } else {
+                            this.currentPage = currentPage + 1;
+                            this.getArticleThumbnail(this.currentPage);
                         }
                     }
                 })
@@ -75,21 +72,6 @@ export default {
     },
     created() {
         this.getArticleThumbnail(this.currentPage);
-    },
-    mounted() {
-        let that = this;
-        window.onscroll = function () {
-            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
-            let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-            if (Math.ceil(scrollTop + windowHeight) >= scrollHeight) {
-                that.currentPage = that.currentPage + 1;
-                that.getArticleThumbnail(that.currentPage);
-            }
-        }
-    },
-    destroyed() {
-        window.onscroll = '';
     }
 }
 </script>

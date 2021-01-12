@@ -8,14 +8,14 @@
                   <div class="rate">
                       <div class="rate-left">
                           <p class="our">Our Score</p>
-                          <Star :max="10" :score="+item.rate"/>
+                          <Star :max="+item.rate.max" :score="+item.rate.score"/>
                       </div>
-                      <span class="score">{{item.rate}}</span>
+                      <span class="score">{{item.rate.score}}</span>
                   </div>
               </div>
               <div class="item-right">
                   <a :href="item.link" @click="execute" class="btn" target="_blank">Visit Site</a>
-                 <router-link :to="{name: 'review',query: {productId: item.id}}" target="_blank" class="readReview">Read Review</router-link>
+                 <!-- <router-link :to="{name: 'review',query: {productId: item.id}}" target="_blank" class="readReview">Read Review</router-link> -->
               </div>
           </li>
       </ul>
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import {getProduct} from '@/api'
+
 export default {
     data() {
         return {
@@ -34,9 +36,11 @@ export default {
             window.execute();
         },
         getTopFive() {
-            this.axios.get('/productAPi/selectTopfive')
+            
+            getProduct()
                 .then(result => {
-                    this.topfiveData = result.data.data;
+
+                    this.topfiveData = result.data.data.slice(0,5);
                 })
                 .catch(err => {
                     window.console.log(err);

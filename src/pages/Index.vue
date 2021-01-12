@@ -5,12 +5,12 @@
         <div class="banner-content">
           <div class="tags">
             <img src="@/assets/img/b-4.png" alt="">
-            <span class="text">DECEMBER 2020!</span>
+            <span class="text">January 2021</span>
           </div>
-          <h1 class="website-title">TOP ANTIVIRUS SOFTWARE</h1>
+          <h1 class="website-title">TOP 10 ANTIVIRUS SOFTWARE</h1>
           <div class="describe">
-            <p>Review the Leading Antivirus & Internet Security Brands. <p>
-            <p>Compare Security Features, Devices & More.</p>
+            <p class="sub-title">Compare The Best Antivirus Solutions For Your Devices.</p>
+            <p class="text">Protecting all your devices from unwanted viruses is vitally important, however it’s not always an easy task and can be time consuming and confusing. You should use antivirus software on all your devices including smartphones & tablets. We have compared some of the best antivirus software around so you don’t have to, we have included details of each company on various criteria from ease of use to value for money. Make sure you protect your computer before its too late as unwanted viruses can infect your computer putting your personal files at risk. </p>
           </div>
           <ul class="list">
             <li>
@@ -37,8 +37,12 @@
           <span class="title-text">FEATURES & DEVICES</span>
           <span class="title-text">TOTAL SCORE</span>
           <span class="title-text">
-            <span class="icon"></span>
-            <span>ADVERTISER DISCLOSURE</span>
+            <span class="iconfont">&#xe680;</span>
+            <span @click="handleDiscloure">ADVERTISER DISCLOSURE</span>
+            <div class="disclosure-content">
+              <p> This website is a free online resource to help you make an informed decision when choosing an antivirus software. We receive advertising revenue from some antivirus software we featured to showcase their products.However, our reviews are not explicitly biased and the income we generate in this way does not specifically affect the service we bring to you, as our customer. Our reviews, and other exhibited content, are wholly original and produced by the site operator at its own discretion and does not imply endorsement. </p>
+              <span class="text" @click="handleDiscloure">CLOSE</span>
+            </div>
           </span>
         </div>
         <div class="product-list">
@@ -48,8 +52,7 @@
                 <span class="text" v-if="index == 0">EDITOR'S CHOICE</span>
               
                 <span class="text" v-if="index != 0">#</span>
-                <!-- <span class="num"  v-if="index != 0">{{index + 1 < 10 ? '0' + (index + 1) : (index + 1)}}</span> -->
-                <span class="num"  v-if="index != 0">{{index + 1}}</span>
+                <span class="num"  v-if="index != 0">{{index + 1 < 10 ? '0' + (index + 1) : (index + 1)}}</span>
              
               
             </div>
@@ -59,7 +62,7 @@
             <div class="info-box">
               <div class="name-box">
                 <h3 class="name">{{item.name}}</h3>
-                <span class="tags" v-if="index == 0">$14.99/YEAR NOW!</span>
+                <span class="tags" v-if="item.tags != ''">{{item.tags}}</span>
               </div>
               <ul class="attr-list">
                 <li v-for="(it,id) in item.meritList" :key="id">
@@ -68,7 +71,7 @@
                 </li>
               </ul>
               <dl class="device-list">
-                <dt>CAPATIBLE DEVICES</dt>
+                <dt>COMPATIBLE DEVICES</dt>
                 <dd><span class="iconfont" title="Windows">&#xe898;</span></dd>
                 <dd><span class="iconfont apple" title="MacOS">&#xe61b;</span></dd>
                 <dd><span class="iconfont ios" title="iOS">&#xe734;</span></dd>
@@ -98,7 +101,8 @@
                   <span class="text">VISIT SITE</span>
                   <span class="iconfont">&#xe65a;</span>
                 </a>
-                <span class="desc">FREE TRAIL</span>
+                <a :href="item.freelink" v-if="item.freelink != ''" target="_blank" class="desc" rel="noopener noreferrer nofollow">FREE TRAIL</a>
+               
               </div>
               <div class="bottom-btn">
                 <router-link :to="{name: 'comparison'}" class="compare-link">
@@ -118,9 +122,9 @@
           <li class="card-item" v-for="(item,index) in topList" :key="index">
             <img :src="item.logo" :alt="item.name" class="logo">
             <img :src="item.picture" :alt="item.name" class="picture">
-            <Rate allow-half disabled :value="Math.floor(Number(item.rate.score) / 2)" class="my-rate"/>
+            <Rate allow-half disabled :value="Number(conversionScore(item.rate.score,item.rate.max))" class="my-rate"/>
             <p class="reviews">Based on {{item.reviews}} reviews</p>
-            <p class="describe">BullGuard’s award-winning security is now enhanced with more extensive machine</p>
+            <p class="describe">{{item.slogan}}</p>
             <a :href="item.link" class="btn">
               <span class="text">Learn More</span>
               <span class="iconfont">&#xe65a;</span>
@@ -254,7 +258,7 @@
     </div>
     <section class="swiper-area"> 
         <h2 class="area-title">WE ALSO RECOMMEND VPN SERVICE TO PROTECT YOUR ONLINE SAFETY</h2>
-        <Swiper :source='topList'/>
+        <Swiper :source='vpnsList'/>
         
     </section>
   </div>
@@ -263,7 +267,8 @@
 <script>
 import $ from 'jquery'
 import Swiper from '@/components/Swiper'
-import { getProduct, getFaq, getBlog, getReview } from '@/api'
+import { conversionScore } from '@/utils'
+import { getVPNs, getProduct, getFaq, getBlog, getReview } from '@/api'
 export default {
   components:{
     Swiper
@@ -273,6 +278,7 @@ export default {
       score: 5,
       productList: [],
       topList: [],
+      vpnsList: [],
       faqList: [],
       blogList: [],
       field: 'speed',
@@ -287,6 +293,7 @@ export default {
     }
   },
   methods: {
+    conversionScore,
     getTime(timestamp) {
       let monthStr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
       let date = new Date(timestamp);
@@ -301,16 +308,6 @@ export default {
       }
 
 
-    },
-    conversionScore(score,max) {
-      // let num = (Number(score) / Number(max) * 5).toFixed(1);
-
-      let num = Number(score) - 5;
-      if ((num % 1) > 0.5) {
-        num = num - (num % 1) + 1;
-      }
-
-      return num;
     },
     showStep(field) {
       this.field = field;
@@ -353,39 +350,42 @@ export default {
       }
      
     },
+    handleDiscloure() {
+      $('.disclosure-content').slideToggle();
+    },
     openBlogDetail(id) {
       this.$router.push({name: 'detail',query: {id: id}})
-    }
-  },
-  async beforeRouteEnter(to,from,next) {
+    },
+    getProductList() {
+      this.$axios.all([getReview(),getProduct()])
+        .then(this.$axios.spread((res1,res2) => {
+          let reviewData = res1,
+              productData = res2;
 
-    try {
-        const reviewData = await getReview();
-        const productData = await getProduct();
+          reviewData.data.data.forEach(item => {
+            productData.data.data.forEach(ele => {
 
-        reviewData.data.data.forEach(item => {
-          productData.data.data.forEach(ele => {
+              if (ele.name.toLocaleLowerCase().trim() == item.product.name.replace(/\s*/g,'').toLocaleLowerCase().trim()) {
+                
+                ele.reviewId = item.productId;
+              }
+            })
+          });
 
-            // console.log(ele.name.toLocaleLowerCase() == item.product.name.replace(/\s*/g,'').toLocaleLowerCase())
+          this.productList=  productData.data.data;
+          this.topList = productData.data.data.slice(0,3);
 
-            if (ele.name.toLocaleLowerCase().trim() == item.product.name.replace(/\s*/g,'').toLocaleLowerCase().trim()) {
-              
-              ele.reviewId = item.productId;
-            }
-          })
+        }))
+        .catch(err => {
+          this.$router.push({name: 'error'});
         })
-        next(vm => {
-          vm.productList=  productData.data.data;
-          vm.topList = productData.data.data.slice(0,3);
-
-        });
-    } catch (error) {
-      console.log(error);
     }
-    
-
   },
+  
   mounted() {
+
+    this.getProductList();
+
     getFaq().then(res => {
       this.faqList = res.data.data;
 
@@ -414,6 +414,11 @@ export default {
       console.log(err);
     })
 
+    getVPNs().then(res => {
+      this.vpnsList = res.data.data;
+    }).catch(err => {
+      console.log(err);
+    })
     
     this.showStep(this.field);
 

@@ -1,6 +1,6 @@
 <template>
   <nav class="menu-wrapper">
-    <img src="@/assets/Image/footer-logo.svg" alt="Antivirus Reivew" class="logo">
+    <img src="@/assets/img/header-logo.png" alt="Antivirus Reivew" class="logo">
     <ul class="menu">
         <li>
             <router-link :to="{name: 'home'}" exact class="menu-item">HOME</router-link>
@@ -12,7 +12,7 @@
             <span class="menu-item">REVIEWS <span class="icon">&#xe666;</span></span>
             <ul class="more-ul">
                 <li v-for="(item,index) in reviewNav" :key="index">
-                    <router-link :to="{name: 'review', query: {productId: item.productId}}">{{item.product.name}} Antivirus</router-link>
+                    <router-link exact :to="{name: 'review', query: {productId: item.productId}}">{{item.product.name}} Antivirus</router-link>
                 </li>
             </ul>
         </li>

@@ -6,7 +6,7 @@
                 <div class="img-box">
                   <img :src="item.logo" :alt="item.name" class="logo">
                 </div>
-                <Rate class="my-rate" disabled allow-half :value="Math.floor(Number(item.rate.score) / 2)" />
+                <Rate class="my-rate" disabled allow-half :value="Number(conversionScore(item.rate.score,item.rate.max))" />
                 
                 <p class="reviews">Based on {{item.reviews}} reviews</p>
               
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-
+import {conversionScore} from '@/utils'
 export default {
     props: {
         source: {
@@ -69,6 +69,7 @@ export default {
         }
     },
     methods: {
+        conversionScore,
         // 计算样式
         computedStyle(nowIndex,source) {
             

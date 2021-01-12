@@ -4,7 +4,7 @@
       <div class="bread-box">
         <span><router-link :to="{name: 'home'}">Home</router-link></span>
         <span>></span>
-        <span><router-link :to="{name: 'article'}">Article</router-link></span>
+        <span><router-link to="/article">Article</router-link></span>
         <span>></span>
         <span>{{item.title}}</span>
       </div>

@@ -54,7 +54,15 @@
 
                 .describe {
                     color: @color;
+                    font-family: 'Montserrat-light';
                     font-size: 20px;
+
+                    .sub-title {
+                        font-weight: bold;
+                    }
+                    .text {
+                        font-size: 16px;
+                    }
                     p {
                         margin: 22px 0px;
                     }
@@ -118,6 +126,34 @@
                     }
                     &:nth-of-type(4) {
                         flex: 22;
+                        cursor: pointer;
+                        position: relative;
+                        .iconfont {
+                            font-size: 18px;
+                            margin-right: 5px;
+                        }
+
+                        .disclosure-content {
+                            display: none;
+                            position: absolute;
+                            z-index:3;
+                            width: 350px;
+                            line-height: 20px;
+                            font-size: 14px;
+                            padding: 10px;
+                            border-radius: 8px;
+                            background-color:#fff;
+                            box-shadow: 0px 2px 6px 0px rgba(0,0,0,.4);
+
+                            .text {
+                                display: inline-block;
+                                margin-top: 10px;
+                                color: #176bf3;
+                                text-decoration-line: underline;
+                                text-decoration-color: #176bf3;
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -167,8 +203,8 @@
                         }
 
                         &::before {
-                            left: 0ch;
-                            bottom: -20px;
+                            left: 0;
+                            bottom: -19px;
                             border-top: 10px solid #3a4b66;
                             border-bottom: 10px solid transparent;
                             border-right: 10px solid #3a4b66;
@@ -176,7 +212,7 @@
                         }
 
                         &::after {
-                            right: 0;
+                            right: -1px;
                             top: 0;
                             border-top: 17px solid transparent;
                             border-right: 8px solid #fff;
@@ -196,7 +232,7 @@
                         
                         .logo {
                             width: 160px;
-                            height: 235px;
+                            // height: 235px;
                             background-color: #fff;
                         }
                     
@@ -348,9 +384,17 @@
                                 text-decoration: none;
                                 
                                 .iconfont {
+                                    transform: translateX(0);
+                                    transition: transform linear 0.1s;
                                     font-weight: bold;
                                     font-size: 14px;
                                     margin: 0 3px;
+                                }
+
+                                &:hover {
+                                    .iconfont {
+                                        transform: translateX(4px);
+                                    }
                                 }
                             }
                             
@@ -383,9 +427,14 @@
                                 border-radius: 6px;
                                 background-color: #176bf3;
                                 text-decoration: none;
-
+                                
+                               
+                                .text {
+                                    transition: all linear 0.1s;
+                                    // transform: translateX(0);
+                                }
                                 .iconfont {
-                                    display: inline-block;
+                                    display: none;
                                     width: 25px;
                                     height: 25px;
                                     line-height: 25px;
@@ -397,6 +446,16 @@
                                     border-radius: 50%;
                                     background-color: #ff8327;
                                 }
+
+                                &:hover {
+                                    // .text {
+                                    //     // transform: translateX(-5px);
+                                    // }
+                                    
+                                    .iconfont {
+                                        display: inline-block;
+                                    }
+                                }
                             }
 
                             .desc {
@@ -405,6 +464,12 @@
                                 font-family: 'CeraPro-Medium';
                                 font-size: 18px;
                                 color: #1b273b;
+                                cursor: pointer;
+
+                                &:hover {
+                                    text-decoration-line: underline;
+                                    text-decoration-color: #1b273b;
+                                }
                             }
                         }
 
@@ -425,12 +490,23 @@
                                 
                                 .iconfont {
                                     display: inline-block;
+                                    transform: translateX(0);
+                                    transition: transform linear 0.1s;
                                     margin: 0 8px;
                                     font-weight: bold;
                                     &.tongji {
                                         font-weight: normal;
                                         font-size: 20px;
                                         color: #0ebb98;
+                                    }
+                                }
+
+                                &:hover {
+                                    .iconfont {
+                                        &.tongji {
+                                            transform: translateX(0);
+                                        }
+                                        transform: translateX(4px);
                                     }
                                 }
                             }
@@ -531,7 +607,10 @@
                         border-radius: 6px;
                         background-color: #edf3fe;
                         text-decoration: none;
-
+                        .text {
+                            transform: translateX(0);
+                            transition: transform linear 0.1s;
+                        }
                         .iconfont {
                             display: inline-block;
                             width: 33px;
@@ -544,7 +623,17 @@
                             border-radius: 50%;
                             color: #fff;
                             background-color: #176bf3;
+                            transform: translateX(0);
+                            transition: transform linear 0.1s;
+                        }
 
+                        &:hover {
+                            .text {
+                                transform: translateX(-4px);
+                            }
+                            .iconfont {
+                                transform: translateX(4px);
+                            }
                         }
                     }
                 }
@@ -747,7 +836,7 @@
                 .blog-item {
                     display: flex;
                     width: 670px;
-                    height: 255px;
+                    height: 165px;
                     padding: 15px;
                     margin-bottom: 26px;
                     background-color: #fff;
@@ -756,7 +845,7 @@
                     box-sizing: border-box;
                     .pic {
                         width: 210px;
-                        height: 210px;
+                        height: 135px;
                         margin-right: 20px;
                         border-radius: 8px;
                     }
@@ -778,9 +867,9 @@
 
                         .blog-title {
                             font-family: 'Montserrat-bold';
-                            margin: 15px 0;
-                            font-size: 23px;
-                            line-height: 32px;
+                            margin: 10px 0;
+                            font-size: 18px;
+                            line-height: 25px;
                             overflow: hidden;
                             text-overflow: ellipsis;
                             display: -webkit-box;
@@ -793,9 +882,9 @@
                             overflow: hidden;
                             text-overflow: ellipsis;
                             display: -webkit-box;
-                            -webkit-line-clamp: 3;
+                            -webkit-line-clamp: 2;
                             -webkit-box-orient: vertical;
-                            font-size: 19px;
+                            font-size: 16px;
                             line-height: 25px;
                             color: #444d5a;
                         }
@@ -844,7 +933,7 @@
                         }
                         .faq-title {
                            
-                            font-size: 23px;
+                            font-size: 22px;
                            
                             color: #1b273b;
                         }
@@ -874,8 +963,9 @@
                         display: none;
                         padding: 30px;
                         border-radius: 8px;
+                        font-family: 'Montserrat-light';
+                        font-size: 16px;
                         line-height: 25px;
-                        font-size: 19px;
                         color: #444d5a;
                         background-color: #f3f7fb;
                     }

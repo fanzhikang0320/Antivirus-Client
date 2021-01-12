@@ -1,0 +1,34 @@
+{
+    "data":  [
+        {
+            "name": "Ultra",
+            "logo": "/public/client/data/img/vpns/ULTRAVPN-h.png",
+            "link": "https://thetopvpns.com/jump?url=https://hotsale.featuredproduct.news/774eca97-c51a-4ad7-83bd-2cf839c7756b",
+            "reviews": "3864",
+            "rate": {
+                "score": "9.8",
+                "max": "10"
+            }
+        },
+        {
+            "name": "NordVPN",
+            "logo": "/public/client/data/img/vpns/NORD-h.png",
+            "link": "https://thetopvpns.com/jump?url=https://hotsale.featuredproduct.news/3c9c090d-ac40-4851-b928-b3ab4c99c47b",
+            "reviews": "3625",
+            "rate": {
+                "score": "9.5",
+                "max": "10"
+            }
+        },
+        {
+            "name": "ExpressVPN",
+            "logo": "/public/client/data/img/vpns/EXPRESS-h.png",
+            "link": "https://thetopvpns.com/jump?url=https://www.xvbelink.com/?a_fid=5176798",
+            "reviews": "3501",
+            "rate": {
+                "score": "9.1",
+                "max": "10"
+            }
+        }
+    ]
+}

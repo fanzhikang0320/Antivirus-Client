@@ -63,6 +63,7 @@
 
 <script>
 import TopTen from '@/components/TopTen/index'
+import {getComparisonBanner,getComparison} from '@/api'
 export default {
   components: {
     TopTen
@@ -160,38 +161,57 @@ export default {
         window.execute();
     },
     getCompaniesbanner() {
-      this.axios.get('/companiesbannerApi/selectCompaniesbanner')
-        .then(result => {
-          if (result.data.code == 0) {
-            this.bannerData = result.data.data[0];
-          } 
-        })
-        .catch(err => {
-          window.console.log(err);
-        })
+      let that = this;
+      return new Promise(function (resolve,reject) {
+        getComparisonBanner()
+          .then(result => {
+            if (result.data.code == 0) {
+              that.bannerData = result.data.data[0];
+              
+            } 
+            resolve();
+          })
+          .catch(err => {
+            
+            window.console.log(err);
+            resolve();
+          })
+      })
+      
     },
     getTableData() {
-      this.axios.get('/companiesApi/selectCompaniesByOrder')
-        .then(result => {
-          this.comparisonData = result.data.data;
-          let arr = [];
-          for (let i = 0; i < this.comparisonData.length; i++) {
+      let that = this;
+      return new Promise(function (resolve,reject) {
 
-            if (this.comparisonData[i].product != null) {
-              arr.push(this.comparisonData[i]);
+        getComparison()
+          .then(result => {
+
+            
+            that.comparisonData = result.data.data;
+            let arr = [];
+            for (let i = 0; i < that.comparisonData.length; i++) {
+
+              if (that.comparisonData[i].product != null) {
+                arr.push(that.comparisonData[i]);
+              }
             }
-          }
 
-          this.comparisonData = arr;
+            that.comparisonData = arr;
 
-          for (let i = 0; i < this.comparisonData.length; i++) {
-              let data = JSON.parse(this.comparisonData[i].companiesList);
-              this.comparisonData[i].companiesList = this.compare(data);
-          }
-        })
-        .catch(err => {
-          window.console.log(err);
-        })
+            for (let i = 0; i < that.comparisonData.length; i++) {
+                let data = JSON.parse(that.comparisonData[i].companiesList);
+                that.comparisonData[i].companiesList = that.compare(data);
+            }
+
+            resolve();
+          })
+          .catch(err => {
+            
+            window.console.log(err);
+            resolve();
+          })
+      })
+      
     },
     compare(target) {
       let origin = [
@@ -287,10 +307,10 @@ export default {
     }
   },
   created() {
-    this.getCompaniesbanner();
-    this.getTableData();
+    Promise.all([this.getTableData(),this.getCompaniesbanner()])
   },
   mounted() {
+
     window.onscroll = function () {
       let tableBox = document.getElementsByClassName('table-box')[0],
         tableTop = document.getElementsByClassName('table-top')[0];      

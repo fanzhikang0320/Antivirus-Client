@@ -19,10 +19,11 @@
 </template>
 
 <script>
+import { getArticleList } from '@/api'
 export default {
   data() {
     return {
-      mustReadData: [],
+      mustReadData: [], 
       total: 4,
       currentPage: Math.floor(Math.random() * 2 + 1),
       limit: 3
@@ -30,13 +31,12 @@ export default {
   },
   methods: {
     getMustRead(currentPage) {
-      this.axios.get('/articleApi/getArticle',{params: {offset: (currentPage - 1) * this.limit,limit: this.limit}})
+      getArticleList({offset: (currentPage - 1) * this.limit,limit: this.limit})
         .then(result => {
             if (result.data.code == 0) {
                 
                 this.total = result.data.data.count;
                 this.mustReadData = result.data.data.rows;
-                // window.console.log('must',result.data.data);
             }
         })
         .catch(err => {

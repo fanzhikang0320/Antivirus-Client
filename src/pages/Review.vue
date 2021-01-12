@@ -4,7 +4,7 @@
 
       <div class="banner-area">
         <div class="banner-content">
-          <h2 class="sub">Best Antivirus Software of 2020</h2>
+          <h2 class="sub">Best Antivirus Software of 2021</h2>
           <h1 class="title">{{item.product.name}} Antivirus Review</h1>
         </div>
       </div>
@@ -159,17 +159,18 @@ export default {
   watch: {
     $route: {
       handler() {
+        
         const productId = this.$route.query.productId;
-        // this.$loading.show();
         getReviewInfo(productId)
           .then(result => {
-            // this.loading.hide();
             if (result.data.code == 0) {
               this.reviewData = result.data.data;
+            } else {
+              this.$router.push({name: 'error'});
             }
           })
           .catch(err => {
-            // this.$loading.hide();
+            this.$router.push({name: 'error'});
             window.console.log(err);
           })
       },

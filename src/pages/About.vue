@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import {getAuthor} from '@/api'
 export default {
   data() {
     return {
@@ -31,10 +32,9 @@ export default {
     }
   },
   methods: {
-    getAuthor() {
-      this.axios.get('/authorApi/getAuthor')
+    getAuthorFunc() {
+      getAuthor()
         .then(result => {
-          // window.console.log(result);
           if (result.data.code == 0) {
             this.authorData = result.data.data;
           }
@@ -46,7 +46,7 @@ export default {
     }
   },
   created() {
-    this.getAuthor();
+    this.getAuthorFunc();
   }
 }
 </script>

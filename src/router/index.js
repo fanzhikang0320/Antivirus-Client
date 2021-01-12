@@ -1,16 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import Default from '@/layouts/default.vue'
-import Home from '@/pages/Index.vue'
+// import Home from '@/pages/Index.vue'
 Vue.use(Router)
 
 const Default = (resolve) => {
   require(['@/layouts/default.vue'],component => {
-
     resolve(component);
   })
 
 }
+
+const Home = (resolve) => {
+  require(['@/pages/Index.vue'],component => {
+    resolve(component);
+  })
+
+}
+
 const routerPush = Router.prototype.push;
 
 Router.prototype.push = function push(location) {
@@ -31,12 +38,7 @@ const routes = [
       {
         path: 'about',
         name: 'about',
-        component: (resolve) => {
-         
-          require(['@/pages/About.vue'],component => {
-            resolve(component);
-          })
-        }
+        component: () => import('@/pages/About.vue')
       },
       {
         path: 'article',

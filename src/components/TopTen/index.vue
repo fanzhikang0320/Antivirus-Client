@@ -2,7 +2,7 @@
   <div class="top-ten-wrapper">
       <div class="top-ten-top clearfix">
           <h5 class="title">See Top 10 VPN Collections</h5>
-            <a href="" @click="jump('https://vpncollection.com')">Learn More ></a>
+          <a href="https://vpncollection.com/best-vpn/" target="_blank" rel="noopener noreferrer nofollow">Learn More ></a>
       </div>
       <ul class="topTen-list">
           <li v-for="(item,index) in toptenList" :key="index">
@@ -10,13 +10,14 @@
               <Star class="star" :score="+item.rate" :max="10"/>
               <span class="score">{{item.rate}}</span>
               <p class="line"></p>
-              <a href="" @click="jump(item.link)" class="review">Read Review</a>
+              <a :href="item.link" rel="noopener noreferrer nofollow" target="_blank"  class="review">Read Review</a>
           </li>
       </ul>
   </div>
 </template>
 
 <script>
+import {getTopVPNs} from '@/api'
 export default {
     data() {
         return {
@@ -25,7 +26,7 @@ export default {
     },
     methods: {
         getToptenList() {
-            this.axios.get('/toptenApi/selectTopten')
+            getTopVPNs()
                 .then(result => {
                     if (result.data.code == 0) {
                         this.toptenList = result.data.data;
@@ -34,9 +35,6 @@ export default {
                 .catch(err => {
                     window.console.log(err);
                 })
-        },
-        jump(url) {
-            window.open(url,'_blank').location;
         }
     },
     created() {

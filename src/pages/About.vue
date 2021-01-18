@@ -52,5 +52,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url('../assets/css/About.less');
+@import url('../assets/css/about.less');
 </style>

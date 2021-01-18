@@ -137,5 +137,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url('../assets/css/Privacy.less');
+@import url('../assets/css/privacy.less');
 </style>

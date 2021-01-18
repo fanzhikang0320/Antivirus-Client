@@ -21,7 +21,7 @@
             width: 100%;
             height: 435px;
             margin: 40px 0px;
-
+            box-sizing: border-box;
             .banner-content {
                 .tags {
                     display: flex;
@@ -235,6 +235,56 @@
                             // height: 235px;
                             background-color: #fff;
                         }
+                        .phone-info-box {
+                            display: none;
+                            .tags {
+                                display: flex;
+                                align-items: center;
+                                font-family: 'CeraPro-Medium';
+                                font-weight: 600;
+                                font-size: 14px;
+                                margin-bottom: 10px;
+                                padding: 5px 10px;
+                                color: #eb1429;
+                                border-radius: 4px;
+                                background-color: #fdebeb;
+                                
+                            }
+                            .name {
+                                font-weight: normal;
+                                font-family: 'CeraPro-Bold';
+                                font-size: 20px;
+                                color: #1b273b;
+                            }
+                            .device-list {
+                                border-top: 1px solid rgb(226,232,242);
+                                padding-top: 10px;
+                                dt {
+                                    font-size: 12px;
+                                    color: #1b273b;
+                                }
+                                dd {
+                                    display: inline-block;
+                                    width: 25px;
+                                    height: 25px;
+                                    margin-right: 10px;
+                                    margin-top: 5px;
+                                    line-height: 25px;
+                                    font-size: 16px;
+                                    text-align: center;
+                                    color: #2172f4;
+                                    border-radius: 50%;
+                                    background-color: #f1f6fe;
+                                    
+                                    .apple {
+                                        font-size: 18px;
+                                    }
+                                    .android {
+                                        font-size: 17px;
+                                    }
+                                }
+                            }
+                        }
                     
                     }
                     .info-box {
@@ -268,6 +318,12 @@
                                 background-color: #fdebeb;
                             }
                             
+                        }
+                        .attr-list-title {
+                            display: none;
+                            font-family: 'CeraPro-Medium';
+                            color: rgb(111,130,156);
+                            font-size: 18px;
                         }
                         .attr-list {
                             display: flex;
@@ -318,6 +374,9 @@
                                 .android {
                                     font-size: 24px;
                                 }
+                                &.nonsupport {
+                                    color: rgb(102,102,102)
+                                }
                             }
                         }
                     
@@ -343,6 +402,11 @@
                                 // font-weight: bold;
                                 font-size: 75px;
                                 color: #1b273b;
+                            }
+                            .star-container {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
                             }
                             .evalute {
                                 font-family: 'Montserrat-bold';
@@ -411,7 +475,7 @@
                             display: flex;
                             align-items: center;
                             flex-direction: column;
-                           
+                            justify-content: center;
                         
                             .btn {
                                 display: flex;
@@ -421,7 +485,6 @@
                                 width: 210px;
                                 height: 67px;
                                 font-family: 'Montserrat-bold';
-                                margin-top: 97px;
                                 font-size: 17px;
                                 color: #fff;
                                 border-radius: 6px;
@@ -473,44 +536,7 @@
                             }
                         }
 
-                        .bottom-btn {
-                            flex: 20;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-top: 1px solid rgb(226,232,242); 
-                            .compare-link {
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                font-family: 'CeraPro-Bold';
-                                color: #212a37;
-                                font-size: 14px;
-                                text-decoration: none;
-                                
-                                .iconfont {
-                                    display: inline-block;
-                                    transform: translateX(0);
-                                    transition: transform linear 0.1s;
-                                    margin: 0 8px;
-                                    font-weight: bold;
-                                    &.tongji {
-                                        font-weight: normal;
-                                        font-size: 20px;
-                                        color: #0ebb98;
-                                    }
-                                }
-
-                                &:hover {
-                                    .iconfont {
-                                        &.tongji {
-                                            transform: translateX(0);
-                                        }
-                                        transform: translateX(4px);
-                                    }
-                                }
-                            }
-                        }
+                        
                     }
 
                     &.first {
@@ -554,6 +580,10 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+
+                @media screen and (max-width: 750px){
+                    display: none;
+                }
                 .card-item {
                     display: flex;
                     flex-direction: column;
@@ -722,8 +752,14 @@
                                     font-family: 'Montserrat-bold';
                                 }
                             }
-                        }
 
+                            .iconfont {
+                                display: none;
+                            }
+                        }
+                        .phone-content-box  {
+                            display: none;
+                        }
                         &:nth-last-of-type(1) {
                             border: none;
                         }
@@ -891,6 +927,30 @@
                     }
                 }
             }
+            .phone-more {
+                display: none;
+                margin-top: 40px;
+                .more {
+                    display: flex;
+                    align-items: center;
+                    font-size: 20px;
+                    color: #1b273b;
+                    text-decoration: none;
+                    .iconfont {
+                        display: inline-block;
+                        width: 32px;
+                        height: 32px;
+                        line-height: 32px;
+                        color: #fff;
+                        font-size: 15px;
+                        font-weight: bold;
+                        text-align: center;
+                        margin-left: 14px;
+                        border-radius: 50%;
+                        background-color: #176bf3;
+                    }
+                }
+            }
         }
 
         .faq-area {
@@ -993,6 +1053,339 @@
             text-align: center;
         }
 
+        .phone-area-title {
+            display: none;
+            font-size: 30px;
+            font-family: 'Montserrat-bold';
+            color: #1b273b;
+        }
+
+        @media screen and (max-width: 750px){
+                height: auto;
+                margin-top: 40px;
+                .area-title {
+                    display: none;
+                    
+                }
+
+                .phone-area-title {
+                    display: block;
+                    text-align: center;
+                }
+
+                .swiper-container {
+                    margin-top: 0;
+                }
+            
+        }
+        
+    }
+
+    @media screen and (max-width: 750px){
+        padding-bottom: 40px;
+        .area-title {
+            font-size: 30px;
+        }
+        .main-container {
+            width: 100%;
+            padding-bottom: 0;
+            .banner-area {
+                height: auto;
+                padding: 0 20px ;
+                .banner-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    .website-title {
+                        margin-bottom: 10px;
+                        font-size: 30px;
+
+                    }
+                    .describe {
+                        .sub-title {
+                            margin: 10px 0px;
+                            font-size: 18px;
+                        }
+                        .text {
+                            font-size: 14px;
+                        }
+                    }
+                    .list {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        margin-top: 0px;
+                        li {
+                            margin-right: 0;
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+                .banner-img {
+                    display: none;
+                }
+            }
+            .product-area {
+                padding: 0 20px;
+
+                .list-title-box {
+                    display: none;
+                }
+                .product-list {
+                    .product-item {
+                        flex-direction: column;
+                        padding: 20px 0;
+                        margin-bottom: 40px;
+                        &:hover {
+                            transform: scale(1);
+                        }
+                        .corner-box {
+                            left: -14px;
+                            top: -15px;
+                            width: 55px;
+                            height: 30px;
+                            font-size: 16px;
+                            &::after {
+                                border-top-width: 15px;
+                                border-bottom-width: 15px;
+                            }
+
+                            .text {
+                                margin-left: 6px;
+                            }
+                            .num {
+                                margin-left: 2px;
+                            }
+                        }
+                        .img-box {
+                            order: 1;
+                            margin-bottom: 20px;
+                            .logo {
+                                width: 115px;
+                                margin-right: 15px;
+                            }
+
+                            .phone-info-box {
+                                display: block;
+                            }
+                        }
+                        .rate-box {
+                            order: 2;
+                            padding: 15px 20px;
+
+                            .rate-content {
+                                .score {
+                                    font-size: 50px;
+                                }
+
+                                .score-container {
+                                    display: flex;
+                                    align-items: center;
+                                    border-bottom: 1px solid rgb(226,214,203);
+                                    margin-bottom: 10px;
+                                    .star-container {
+                                        display: flex;
+                                        flex-direction: column;
+                                        margin-left: 10px;
+                                        .evalute {
+                                            order: 2;
+                                        }
+
+                                        .my-rate {
+                                            font-size: 25px;
+                                            line-height: 20px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .bottom-btn {
+                                margin-top: 5px;
+                                border: none;
+                            }
+                        }
+                        .info-box {
+                            order: 3;
+                            padding: 0 20px;
+                            .attr-list-title {
+                                display: block;
+                                margin: 18px 0;
+                            }
+                            .attr-list {
+                                li {
+                                    .text {
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+                            .name-box {
+                                display: none;
+                            }
+                            .device-list {
+                                display: none;
+                            }
+                        }
+                        .btn-box {
+                            order: 4;
+                            
+                            padding: 0 20px;
+                            .btn-content {
+                                .btn {
+                                    margin-top: 20px;
+                                    width: 100%;
+                                    height: 60px;
+                                    
+                                }
+                            }
+                            .bottom-btn {
+                                margin-top: 13px;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .how-rate-area {
+                padding: 0 20px;
+                .how-rate-title-box {
+                    margin-bottom: 40px;
+                }
+                .how-rate-container {
+                    .options-content {
+                        flex-direction: column;
+                        border: none;
+                        li {
+                            margin-bottom: 20px;
+                            border-right: none;
+                            padding-bottom: 20px;
+                            border-bottom: 1px solid rgb(229,238,245);
+                            .options-item {
+                                padding: 15px 0;
+                                justify-content: space-between;
+                                .iconfont {
+                                    flex-shrink: 0;
+                                    display: inline-block;
+                                    width: 38px;
+                                    height: 38px;
+                                    margin-left: 70px;
+                                    border-radius: 50%;
+                                    line-height: 38px;
+                                    text-align: center;
+                                    background-color: #ffffff;
+                                    transform: rotateZ(0);
+                                    transition: all linear 0.1s;
+
+                                    &.now {
+                                        transform: rotateZ(-90deg);
+                                        background-color: #176bf3;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                            .phone-content-box {
+                                width: 100%;
+                                padding: 25px;
+                                border-radius: 8px;
+                                background-color: #ffffff;
+
+                                .phone-title-box {
+                                    display: flex;
+                                    flex-direction: column;
+                                    .blue {
+                                        font-size: 14px;
+                                        color: rgb(23,107,243);
+                                    }
+                                    .phone-title {
+                                        margin: 10px 0;
+                                        font-size: 20px;
+                                        font-family: 'Montserrat-bold';
+                                    }
+                                }
+                            }
+
+                            &.current {
+                                
+                                &::before,&::after {
+                                    display: none;
+                            
+                                }
+                            }
+                        }
+                    }
+                    .content-box {
+                        display: none;
+                    }
+                }
+            }
+
+            .blog-area {
+                padding: 0 20px;
+                margin-top: 0px;
+                .blog-area-title-box {
+                    justify-content: center;
+                    .more {
+                        display: none;
+                    }
+                }
+                .blog-list {
+                    flex-direction: column;
+                    margin-top: 32px;
+                    .blog-item {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        height: auto;
+                        padding: 10px;
+                        margin-bottom: 12px;
+
+                        .pic {
+                            width: 100%;
+                            height: auto;
+                            margin-right: 0;
+                        }
+                        .blog-container {
+                            margin-top: 10px;
+
+                        }
+                    }
+                }
+                .phone-more {
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
+
+            .faq-area {
+                margin-top: 60px;
+                padding: 0 20px;
+                .faq-area-title-box {
+                    margin-bottom: 32px;
+                }
+                .faq-container {
+                    flex-direction: column;
+                }
+                .faq-list {
+                    .faq-item {
+                        width: 100%;
+                        padding: 15px 15px;
+                        .faq-title-box {
+                            height: auto;
+                            padding: 12px 0;
+                            .faq-title {
+                                font-size: 18px;
+                            }
+                        }
+                        .content {
+                            padding: 15px;
+                        }
+                    }
+                }
+            }
+
+            
+            
+        }
         
     }
 }

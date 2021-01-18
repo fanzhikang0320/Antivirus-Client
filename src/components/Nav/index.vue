@@ -9,7 +9,7 @@
             <router-link :to="{name: 'comparison'}" class="menu-item">COMPARISON</router-link>
         </li>
         <li class="more">
-            <span class="menu-item">REVIEWS <span class="icon">&#xe666;</span></span>
+            <span class="menu-item" @click="handleShowReviews">REVIEWS <span class="icon">&#xe666;</span></span>
             <ul class="more-ul">
                 <li v-for="(item,index) in reviewNav" :key="index">
                     <router-link exact :to="{name: 'review', query: {productId: item.productId}}">{{item.product.name}} Antivirus</router-link>
@@ -23,6 +23,7 @@
             <router-link :to="{name: 'contact'}" class="menu-item">GET HELP</router-link>
         </li>
     </ul>
+    <span :class="{'menu-icon': true, 'iconfont': true, 'active': isActive}" @click="handleShowMenu">&#xe608;</span>
   </nav>
 </template>
 
@@ -32,7 +33,35 @@ import { getReview } from '@/api'
 export default {
     data() {
         return {
-            reviewNav: []
+            reviewNav: [],
+            isActive: false
+        }
+    },
+    methods: {
+        handleShowMenu() {
+            this.isActive = !this.isActive;
+            this.$nextTick(() => {
+                
+                $('.menu-wrapper .menu').slideToggle();
+
+                if (!this.isActive) {
+                    $('.menu .more .menu-item .icon').removeClass('rotate')
+                    $('.menu-wrapper .more-ul').slideUp();
+                }
+            })
+            
+        },
+        handleShowReviews() {
+            this.$nextTick(() => {
+                if (window.screen.width <= 750) {
+                    $('.menu .more').hover(() => false,() => false)
+                    $('.menu .more .menu-item .icon').toggleClass('rotate')
+                    $('.menu-wrapper .more-ul').slideToggle();
+                } else {
+                    return false;
+                }
+            })
+            
         }
     },
     mounted() {
@@ -42,11 +71,21 @@ export default {
             console.log(err);
         })
 
-        $('.menu .more').hover(function () {
-            $('.menu .more-ul').stop().slideDown('fast');
-        },function () {
-            $('.menu .more-ul').stop().slideUp('fast');
-        })
+        if (window.screen.width <= 750) {
+            
+        } else {
+            this.$nextTick(() => {
+
+                $('.menu .more').hover(function () {
+                    $('.menu .more .menu-item .icon').addClass('rotate')
+                    $('.menu .more-ul').stop().slideDown('fast');
+                },function () {
+                    $('.menu .more .menu-item .icon').removeClass('rotate')
+                    $('.menu .more-ul').stop().slideUp('fast');
+                })
+            })
+        }
+        
     }
 }
 </script>

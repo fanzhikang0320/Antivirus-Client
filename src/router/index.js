@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Default from '@/layouts/default.vue'
-// import Home from '@/pages/Index.vue'
 Vue.use(Router)
 
 const Default = (resolve) => {
@@ -11,12 +9,7 @@ const Default = (resolve) => {
 
 }
 
-const Home = (resolve) => {
-  require(['@/pages/Index.vue'],component => {
-    resolve(component);
-  })
 
-}
 
 const routerPush = Router.prototype.push;
 
@@ -33,7 +26,7 @@ const routes = [
       {
         path: '',
         name: 'home',
-        component: Home
+        component: () => import('@/pages/Index.vue')
       },
       {
         path: 'about',
@@ -43,10 +36,12 @@ const routes = [
       {
         path: 'article',
         name: 'article',
+
         component: () => import('@/pages/Article.vue'),
+        redirect: '/article/index',
         children: [
           {
-            path: '',
+            path: 'index',
             name: 'thumbnail',
             component: () => import('@/pages/Thumbnail.vue')
           },
@@ -91,8 +86,10 @@ const routes = [
 
 const router = new Router({
     linkActiveClass: 'active',
-    // linkExactActiveClass: 'active',
     mode: 'history',
+    scrollBehavior: () => {
+      return { x: 0, y: 0 }
+    },
     routes
 });
 

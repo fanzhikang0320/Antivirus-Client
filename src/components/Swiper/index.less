@@ -1,4 +1,4 @@
-.swiper-container {
+.my-swiper-container {
     margin-top: 100px;
     .swiper-main {
         position: relative;
@@ -147,4 +147,32 @@
             }
         }
     }
+
+    @media screen and (max-width: 750px){
+        width: 100%;
+        overflow: hidden;
+
+        .swiper-main {
+
+            .swiper-item {
+                width: 80%;
+                height: 350px;
+                margin: 0;
+                .img-box {
+                    padding: 25px 0;
+                }
+                .logo {
+                    height: 50px;
+                }
+                .my-rate {
+                    font-size: 30px;
+                }
+                .btn {
+                    width: 90%;
+                    height: 60px;
+                }
+            }
+        }
+    }
 }
+

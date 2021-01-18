@@ -37,5 +37,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url('../assets/css/Article.less');
+@import url('../assets/css/article.less');
 </style>

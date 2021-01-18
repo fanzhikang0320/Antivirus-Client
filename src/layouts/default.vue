@@ -5,6 +5,7 @@
     </header>
     <main >
         <router-view></router-view>
+        <BackTop/>
         <Message :src="imgSrc" :link="link" :freeLink="freeLink" :duration="20000"/>
     </main>
     <footer>
@@ -27,8 +28,8 @@ export default {
     data() {
       return {
         imgSrc: '/public/client/data/img/Message.png',
-        link: 'https://track.totalav.com/5f3e31dcba9f9/click',
-        freeLink: 'https://track.totalav.com/5f030579e4a47/click'
+        link: 'https://hotsale.featuredproduct.news/2d477833-27ba-47e1-a835-b737c7bab2f3',
+        freeLink: 'https://track.totalav.com/5fc0ba7489e8d/click'
       }
     }
 }
@@ -55,6 +56,10 @@ main {
   width: 100%;
   // min-height: ~ 'calc(100% - 286px)';
   background-color: #f7fafc;
+
+  @media screen and (max-width: 750px) {
+    padding-top: 64px;
+  }
 }
 footer {
   background-color: #132036;

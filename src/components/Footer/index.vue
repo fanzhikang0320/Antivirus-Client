@@ -3,10 +3,10 @@
       <div class="footer-top">
           <img src="@/assets/Image/footer-logo.svg" alt="logo" class="logo">
           <nav class="menu-box">
-              <router-link :to="{name: 'home'}">HOME</router-link>
-              <router-link :to="{name: 'comparison'}">COMPARISON</router-link>
-              <router-link to=/article>ARTICLE</router-link>
-              <router-link :to="{name: 'about'}">ABOUT</router-link>
+              <router-link :to="{name: 'home'}"><span class="text">HOME</span><span class="iconfont">&#xe65a;</span></router-link>
+              <router-link :to="{name: 'comparison'}"><span class="text">COMPARISON</span><span class="iconfont">&#xe65a;</span></router-link>
+              <router-link to=/article><span class="text">ARTICLE</span><span class="iconfont">&#xe65a;</span></router-link>
+              <router-link :to="{name: 'about'}"><span class="text">ABOUT</span><span class="iconfont">&#xe65a;</span></router-link>
              
           </nav>
           <div class="share-box">
@@ -16,9 +16,8 @@
       </div>
       <div class="footer-bottom">
           
-        <p class="copyright">Copyright © 2009-2020 Yiliang Technology Co., Ltd. All Rights Reserved.</p>
+        <p class="copyright">Copyright © 2009-2021 Westwin Technologies Co.,Ltd. All Rights Reserved.</p>
         <div class="nav">
-            <!-- <router-link :to="{name: 'home'}">Term & Condition</router-link> -->
             <router-link :to="{name: 'privacy'}">Privacy policy</router-link>
         </div>
       </div>

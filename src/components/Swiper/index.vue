@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper-container">
+  <div class="my-swiper-container">
 
           <div class="swiper-main">
             <div class="swiper-item" v-for="(item,index) in list" :style="item.sty" :key="index">
@@ -11,7 +11,7 @@
                 <p class="reviews">Based on {{item.reviews}} reviews</p>
               
               
-              <a :href="item.link" rel="nofollow" :class="{'btn': true, 'active':item.className}">
+              <a :href="item.link" target="_blank" rel="nofollow" :class="{'btn': true, 'active':item.className}">
                 <span class="text">Learn More</span>
                 <span class="iconfont">&#xe65a;</span>
               </a>

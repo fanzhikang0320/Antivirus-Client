@@ -5,9 +5,9 @@
         <div class="banner-content">
           <div class="tags">
             <img src="@/assets/img/b-4.png" alt="">
-            <span class="text">January 2021</span>
+            <span class="text">{{this.getTime(new Date(),'complete').month}} {{this.getTime(new Date(),'complete').year}}</span>
           </div>
-          <h1 class="website-title">TOP 10 ANTIVIRUS SOFTWARE</h1>
+          <h1 class="website-title">TOP {{count}} ANTIVIRUS SOFTWARE</h1>
           <div class="describe">
             <p class="sub-title">Compare The Best Antivirus Solutions For Your Devices.</p>
             <p class="text">Protecting all your devices from unwanted viruses is vitally important, however it’s not always an easy task and can be time consuming and confusing. You should use antivirus software on all your devices including smartphones & tablets. We have compared some of the best antivirus software around so you don’t have to, we have included details of each company on various criteria from ease of use to value for money. Make sure you protect your computer before its too late as unwanted viruses can infect your computer putting your personal files at risk. </p>
@@ -58,12 +58,24 @@
             </div>
             <div class="img-box">
               <img :src="item.picture" :alt="item.name" class="logo">
+              <div class="phone-info-box">
+                <span class="tags" v-if="item.tags != ''">{{item.tags}}</span>
+                <h3 class="name">{{item.name}}</h3>
+                <dl class="device-list">
+                  <dt>COMPATIBLE DEVICES</dt>
+                  <dd><span class="iconfont" title="Windows">&#xe898;</span></dd>
+                  <dd><span class="iconfont apple" title="MacOS">&#xe61b;</span></dd>
+                  <dd><span class="iconfont ios" title="iOS">&#xe734;</span></dd>
+                  <dd><span class="iconfont android" title="Android">&#xe690;</span></dd>
+                </dl>
+              </div>
             </div>
             <div class="info-box">
               <div class="name-box">
                 <h3 class="name">{{item.name}}</h3>
                 <span class="tags" v-if="item.tags != ''">{{item.tags}}</span>
               </div>
+              <h6 class="attr-list-title">FEATURES & DEVICES</h6>
               <ul class="attr-list">
                 <li v-for="(it,id) in item.meritList" :key="id">
                   <span class="iconfont">&#xe604;</span>
@@ -72,21 +84,25 @@
               </ul>
               <dl class="device-list">
                 <dt>COMPATIBLE DEVICES</dt>
-                <dd><span class="iconfont" title="Windows">&#xe898;</span></dd>
-                <dd><span class="iconfont apple" title="MacOS">&#xe61b;</span></dd>
-                <dd><span class="iconfont ios" title="iOS">&#xe734;</span></dd>
-                <dd><span class="iconfont android" title="Android">&#xe690;</span></dd>
+                <dd :class="{'nonsupport': !item.deviceList.windows}"><span class="iconfont" title="Windows">&#xe898;</span></dd>
+                <dd :class="{'nonsupport': !item.deviceList.macOS}"><span class="iconfont apple" title="MacOS">&#xe61b;</span></dd>
+                <dd :class="{'nonsupport': !item.deviceList.iOS}"><span class="iconfont ios" title="iOS">&#xe734;</span></dd>
+                <dd :class="{'nonsupport': !item.deviceList.android}"><span class="iconfont android " title="Android">&#xe690;</span></dd>
               </dl>
             </div>
             <div class="rate-box">
               <div class="rate-content">
-                <span class="score">{{item.rate.score}}</span>
-                <span class="evalute" v-if="index < 3">OUTSTANDING</span>
-                <span class="evalute" v-if="index >= 3 && index < 6">VERY GOOD</span>
-                <span class="evalute" v-if="index >= 6 ">GOOD</span>
-                <Rate disabled allow-half class="my-rate" :value="Number(conversionScore(item.rate.score,item.rate.max))"/>
+                <div class="score-container">
+                  <span class="score">{{item.rate.score}}</span>
+                    <div class="star-container">
+                      <span class="evalute" v-if="index < 3">OUTSTANDING</span>
+                      <span class="evalute" v-if="index >= 3 && index < 6">VERY GOOD</span>
+                      <span class="evalute" v-if="index >= 6 ">GOOD</span>
+                      <Rate disabled allow-half class="my-rate" :value="Number(conversionScore(item.rate.score,item.rate.max))"/>
+                    </div>
+                  </div>
                 <span class="reviews">Based on {{item.reviews}} reviews</span>
-                <!-- <span class="text">PLEASE VOTE</span> -->
+                
               </div>
               <div class="bottom-btn" v-if="item.reviewId">
                 <router-link :to="{name: 'review', query: {productId: item.reviewId}}" class="review-link">
@@ -99,25 +115,19 @@
             </div>
             <div class="btn-box">
               <div class="btn-content">
-                <a :href="item.link" class="btn">
+                <a :href="item.link" target="_blank" rel="noopener noreferrer nofollow" class="btn" @click="handleExe">
                   <span class="text">VISIT SITE</span>
                   <span class="iconfont">&#xe65a;</span>
                 </a>
                 <a :href="item.freelink" v-if="item.freelink != ''" target="_blank" class="desc" rel="noopener noreferrer nofollow">FREE TRAIL</a>
                
               </div>
-              <div class="bottom-btn">
-                <router-link :to="{name: 'comparison'}" class="compare-link">
-                  <span class="iconfont tongji">&#xe6e8;</span>
-                  <span class="text">COMPARE NOW</span>
-                  <span class="iconfont">&#xe65a;</span>
-                </router-link>
-              </div>
               
             </div>
           </div>
         </div>
       </section>
+      
       <section class="top-three-area">
         <h2 class="area-title">TOP 3 ANTIVIRUS</h2>
         <ul class="card-list">
@@ -127,13 +137,16 @@
             <Rate allow-half disabled :value="Number(conversionScore(item.rate.score,item.rate.max))" class="my-rate"/>
             <p class="reviews">Based on {{item.reviews}} reviews</p>
             <p class="describe">{{item.slogan}}</p>
-            <a :href="item.link" class="btn">
+            <a :href="item.link" rel="noopener noreferrer nofollow" target="_blank" @click="handleExe" class="btn">
               <span class="text">Learn More</span>
               <span class="iconfont">&#xe65a;</span>
             </a>
           </li>
         </ul>
+        <!-- 移动端 展示另一个 -->
+        <PhoneSwiper :list="topList"/>
       </section>
+      
       <section class="how-rate-area">
         <div class="how-rate-title-box">
           <span class="btn">HOW WE WORKS</span>
@@ -150,6 +163,16 @@
                   <span class="s">STEP - 01</span>
                   <span>TEST SPEED</span>
                 </div>
+                <span class="iconfont" data-field="speed">&#xe65a;</span>
+              </div>
+              <div class="phone-content-box" data-field="speed">
+                <div class="phone-title-box">
+                  <span class="blue">STEP - 01</span>
+                  <span class="phone-title">TEST SPEED</span>
+                  <div class="content">
+                    <p>In an ideal world antivirus software would offer <strong data-v-ec644c4a="">complete protection with zero impact on your computer’s performance</strong>. Unfortunately, antivirus suites have to perform a lot of heavy lifting behind the scenes and this can have a small and sometimes noticeable effect on things like opening apps, moving files, and so on.</p>
+                  </div>
+                </div>
               </div>
             </li>
             <li :class="{'current': field == 'features'}" @click="showStep('features')">
@@ -158,6 +181,16 @@
                 <div class="text-box">
                   <span class="s">STEP - 02</span>
                   <span>FEATURES</span>
+                </div>
+                <span class="iconfont" data-field="features">&#xe65a;</span>
+              </div>
+              <div class="phone-content-box" data-field="features">
+                <div class="phone-title-box">
+                  <span class="blue">STEP - 02</span>
+                  <span class="phone-title">FEATURES</span>
+                  <div class="content">
+                    <p>To get top marks, an antivirus package needs to <strong data-v-ec644c4a="">include all of the essentials</strong>, including smart anti-malware and anti-spyware, browsing protection and email security. Additionally, we also rate extra features that you might find useful, like <strong data-v-ec644c4a="">parental controls, social media protection, and anti-phishing security</strong>.</p>
+                  </div>
                 </div>
               </div>
             </li>
@@ -168,6 +201,16 @@
                   <span class="s">STEP - 03</span>
                   <span>EASE OF USE</span>
                 </div>
+                <span class="iconfont" data-field="use">&#xe65a;</span>
+              </div>
+              <div class="phone-content-box" data-field="use">
+                <div class="phone-title-box">
+                  <span class="blue">STEP - 03</span>
+                  <span class="phone-title">EASE OF USE</span>
+                  <div class="content">
+                    <p>Antivirus software has become increasingly complex over recent years. Here we rate how easy it is to <strong data-v-ec644c4a="">set up the different elements of the antivirus suite</strong>, and how much user intervention is required to ensure crucial scans are performed and that important software updates are installed.</p>
+                  </div>
+                </div>
               </div>
             </li>
             <li :class="{'current': field == 'money'}" @click="showStep('money')">
@@ -176,6 +219,16 @@
                 <div class="text-box">
                   <span class="s">STEP - 04</span>
                   <span>VALUE FOR MONEY</span>
+                </div>
+                <span class="iconfont" data-field="money">&#xe65a;</span>
+              </div>
+              <div class="phone-content-box" data-field="money">
+                <div class="phone-title-box">
+                  <span class="blue">STEP - 04</span>
+                  <span class="phone-title">VALUE FOR MONEY</span>
+                  <div class="content">
+                    <p>We always consider the <strong data-v-ec644c4a="">total cost of a package</strong> when we decide upon its overall review score. When it comes to antivirus there can be several differences between the brands, both with regard to the <strong data-v-ec644c4a="">level of protection offered and the number of devices protected</strong>.</p>
+                  </div>
                 </div>
               </div>
             </li>
@@ -219,7 +272,12 @@
           
           
         </div>
-        
+        <div class="phone-more">
+          <router-link to="/article" class="more">
+            <span class="text">See More</span>
+            <span class="iconfont">&#xe65a;</span>
+          </router-link>
+        </div>
       </section>
       <section class="faq-area">
         <div class="faq-area-title-box">
@@ -260,6 +318,7 @@
     </div>
     <section class="swiper-area"> 
         <h2 class="area-title">WE ALSO RECOMMEND VPN SERVICE TO PROTECT YOUR ONLINE SAFETY</h2>
+        <h2 class="phone-area-title">RECOMMEND VPN</h2>
         <Swiper :source='vpnsList'/>
         
     </section>
@@ -269,15 +328,18 @@
 <script>
 import $ from 'jquery'
 import Swiper from '@/components/Swiper'
-import { conversionScore } from '@/utils'
+import PhoneSwiper from '@/components/PhoneSwiper/index.vue'
+import { conversionScore, changeTime } from '@/utils'
 import { getVPNs, getProduct, getFaq, getBlog, getReview } from '@/api'
 export default {
   components:{
-    Swiper
+    Swiper,
+    PhoneSwiper
   },
   data() {
     return {
       score: 5,
+      count: 0, //  产品数量
       productList: [],
       topList: [],
       vpnsList: [],
@@ -296,21 +358,15 @@ export default {
   },
   methods: {
     conversionScore,
-    getTime(timestamp) {
-      let monthStr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
-      let date = new Date(timestamp);
-      let month = date.getMonth();
-      let day = date.getDate();
-      let year = date.getFullYear();
-
-      return {
-        year,
-        month: monthStr[month],
-        day,
-      }
-
+    // 转换时间
+    getTime(timestamp,monthFormat) {
+      return changeTime(timestamp,{monthFormat: monthFormat});
 
     },
+    handleExe() {
+      window.execute();
+    },
+    // 展示step
     showStep(field) {
       this.field = field;
       if (field == 'speed') {
@@ -320,6 +376,7 @@ export default {
           field: 'TEST SPEED',
           content: '<p>In an ideal world antivirus software would offer <strong data-v-ec644c4a="">complete protection with zero impact on your computer’s performance</strong>. Unfortunately, antivirus suites have to perform a lot of heavy lifting behind the scenes and this can have a small and sometimes noticeable effect on things like opening apps, moving files, and so on.</p>'
         }
+        
       } else if (field == 'features') {
         this.stepContent = {
           key: 'STEP - 02',
@@ -339,7 +396,27 @@ export default {
           content: '<p>We always consider the <strong data-v-ec644c4a="">total cost of a package</strong> when we decide upon its overall review score. When it comes to antivirus there can be several differences between the brands, both with regard to the <strong data-v-ec644c4a="">level of protection offered and the number of devices protected</strong>.</p>'
         }
       }
+
+      this.showPhoneStep(field);
     },
+    // 展示step（移动端）
+    showPhoneStep(field) {
+      if (window.screen.width <= 750) {
+        $('.options-content .iconfont').each(function () {
+          let fieldTxt = $(this).data('field');
+          if (field == fieldTxt) {
+            $(this).toggleClass('now')
+          }
+        })
+          $('.options-content .phone-content-box').each(function () {
+            let fieldTxt = $(this).data('field');
+            if (field == fieldTxt) {
+              $(this).slideToggle()
+            }
+          })
+        }
+    },
+    // 展开问题
     showFaq(index,position) {
       // this.faqIndex = index;
 
@@ -352,18 +429,41 @@ export default {
       }
      
     },
+    // 是否显示disclosure内容
     handleDiscloure() {
       $('.disclosure-content').slideToggle();
     },
+    // 跳转至 blog详情
     openBlogDetail(id) {
       this.$router.push({name: 'detail',query: {id: id}})
     },
+    // 获取 产品列表
     getProductList() {
+      let aff_sub = this.$route.query['utm_term'];
+      let aff_sub2 = this.$route.query['TargetId'];
+      let aff_sub3 = this.$route.query['loc'];
+      let msclkid = this.$route.query['msclkid'];
+      let gclid = this.$route.query['gclid'];
+      let aff_sub4 = Math.floor(new Date().getTime() / 1000);
+
       this.$axios.all([getReview(),getProduct()])
         .then(this.$axios.spread((res1,res2) => {
           let reviewData = res1,
               productData = res2;
 
+          productData.data.data.forEach(ele => {
+            if (ele.key == 'totalav') {
+
+              if (typeof gclid != 'undefined') {
+                ele.link =  `${ele.link}?gclid=google&keyword=${aff_sub === undefined ? 'false' : aff_sub}&targetid=${aff_sub2 === undefined ? 'false' : aff_sub2}&CampaignId=g`
+              } else if (typeof msclkid != 'undefined') {
+                ele.link = `${ele.link}?msclkid=${msclkid}&keyword=${aff_sub === undefined ? 'false' : aff_sub}&TargetId=${aff_sub2 === undefined ? 'false' : aff_sub2}&CampaignId=b`
+              } else {
+                ele.link = `${ele.link}?default=false`
+              }
+
+            }
+          })
           reviewData.data.data.forEach(item => {
             productData.data.data.forEach(ele => {
 
@@ -385,9 +485,9 @@ export default {
   },
   
   mounted() {
-
     this.getProductList();
 
+    // 获取问题
     getFaq().then(res => {
       this.faqList = res.data.data;
 
@@ -401,11 +501,11 @@ export default {
     }).catch(err => {
       console.log(err);
     })
-
+    // 获取文章
     getBlog(0,4).then(res => {
       res.data.data.rows.forEach(item => {
         item.picture = 'https://www.thebestantivirus.news' + item.picture;
-        let time = this.getTime(item.addTime);
+        let time = this.getTime(item.addTime,'shorthand');
 
         item.date = `${time.month} ${time.day}, ${time.year}`
       })
@@ -416,6 +516,7 @@ export default {
       console.log(err);
     })
 
+    // 获取推荐vpns
     getVPNs().then(res => {
       this.vpnsList = res.data.data;
     }).catch(err => {

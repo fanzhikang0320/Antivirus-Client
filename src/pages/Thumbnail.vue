@@ -77,5 +77,5 @@ export default {
 </script>
 
 <style lang="less">
-@import url('../assets/css/Thumbnail.less');
+@import url('../assets/css/thumbnail.less');
 </style>

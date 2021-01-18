@@ -94,5 +94,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url('../assets/css/Contact.less');
+@import url('../assets/css/contact.less');
 </style>

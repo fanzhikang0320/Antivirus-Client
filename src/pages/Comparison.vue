@@ -15,7 +15,7 @@
                 <img :src="item.product.logo" :alt="item.product.name" class="logo">
                 <span class="rate">{{item.product.rate}}</span>
                 <Star :max="10" :score="+item.product.rate"/>
-                <a :href="item.product.link" @click="execute" target="_blank">Visit Site</a>
+                <a :href="item.product.link" @click="handleExe" target="_blank">Visit Site</a>
               
             </li>
           </ul>
@@ -157,7 +157,7 @@ export default {
     }
   },
   methods: {
-    execute() {
+    handleExe() {
         window.execute();
     },
     getCompaniesbanner() {
@@ -336,5 +336,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url('../assets/css/Comparison.less');
+@import url('../assets/css/comparison.less');
 </style>

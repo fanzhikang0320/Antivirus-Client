@@ -3,12 +3,12 @@
         {
             "name": "TOTALAV",
             "key": "totalav",
-            "link": "https://hotsale.featuredproduct.news/9bc22aae-0a5b-4bfe-867e-6628c307f233",
+            "link": "https://hotsale.featuredproduct.news/2d477833-27ba-47e1-a835-b737c7bab2f3",
             "website": {
                 "link": "https://track.totalav.com",
                 "name": "totalav.com"
             },
-            "freelink": "https://track.totalav.com/5f030579e4a47/click",
+            "freelink": "https://track.totalav.com/5fc0ba7489e8d/click",
             "reviews": 4228,
             "logo": "/public/client/data/img/total-av.png",
             "picture": "/public/client/data/img/total-av-p.png",
@@ -16,7 +16,7 @@
             "coop_pic": "/public/client/data/img/top.png",
             "price": "19.00",
             "history_price": "99",
-            "tags": "Save 80% off",
+            "tags": "Limited time offer：80% off now",
             "slogan": "Best antivirus of 2021, providing excellent antivirus protection. Trusted by 25 million users around the world.",
             "aside_slogan": "Best antivirus of 2020，providing  excellent antivirus protection",
             "Protection_rate": {
@@ -51,7 +51,13 @@
                     "text": "Save 80% on the newest 2021 Edition via our link"
                 }
                 
-            ]
+            ],
+            "deviceList": {
+                "windows": true,
+                "iOS": true,
+                "macOS": true,
+                "android": true
+            }
         },
         
         {
@@ -70,7 +76,7 @@
             "coop_pic": "",
             "price": "29.99",
             "history_price": "10",
-            "tags": "$19.99/ year",
+            "tags": "$19.99/year today",
             "slogan": "High accuracy, low-impact antivirus with online backup capabilities.",
             "aside_slogan": "",
             "Protection_rate": {
@@ -104,12 +110,18 @@
                 {
                     "text": "Dark web monitoring"
                 }
-            ]
+            ],
+            "deviceList": {
+                "windows": true,
+                "iOS": true,
+                "macOS": true,
+                "android": true
+            }
         },
         {
             "name": "McAfee",
             "key": "",
-            "link": "https://secureconv-dl.com/?a=126374&c=227127&mt=4",
+            "link": "https://secureconv-dl.com/?a=126374&c=226356&mt=4",
             "website": {
                 "link": "",
                 "name": ""
@@ -156,7 +168,13 @@
                 {
                     "text": "Award-winning detection features"
                 }
-            ]
+            ],
+            "deviceList": {
+                "windows": true,
+                "iOS": true,
+                "macOS": true,
+                "android": true
+            }
         },
         
         
@@ -207,7 +225,13 @@
                 {
                     "text": "Parental control protects children"
                 }
-            ]
+            ],
+            "deviceList": {
+                "windows": true,
+                "iOS": true,
+                "macOS": true,
+                "android": true
+            }
         },
         {
             "name": "Malwarebytes",
@@ -251,7 +275,13 @@
                     "text": "Protect devices from all kinds of threats"
                 }
                 
-            ]
+            ],
+            "deviceList": {
+                "windows": true,
+                "iOS": true,
+                "macOS": true,
+                "android": true
+            }
         },
         {
             "name": "Kaspersky",
@@ -294,7 +324,13 @@
                 {
                     "text": "Offer flexible control"
                 }
-            ]
+            ],
+            "deviceList": {
+                "windows": true,
+                "iOS": true,
+                "macOS": true,
+                "android": true
+            }
         },
         
         {
@@ -338,7 +374,13 @@
                 {
                     "text": "Makes data stretchy and customizable"
                 }
-            ]
+            ],
+            "deviceList": {
+                "windows": true,
+                "iOS": true,
+                "macOS": true,
+                "android": true
+            }
         },
         {
             "name": "PCPROTECT",
@@ -385,7 +427,13 @@
                     "text": "Does not hog resources or slow your down"
                 }
                 
-            ]
+            ],
+            "deviceList": {
+                "windows": true,
+                "iOS": true,
+                "macOS": true,
+                "android": true
+            }
         },
         {
             "name": "Intego",
@@ -428,7 +476,13 @@
                 {
                     "text": "Parental controls with website and application blocking"
                 }
-            ]
+            ],
+            "deviceList": {
+                "windows": false,
+                "iOS": false,
+                "macOS": true,
+                "android": false
+            }
         },
         
         {
@@ -473,7 +527,13 @@
                     "text": "Excellent Anti-Spyware and Anti-Phishing"
                 }
                 
-            ]
+            ],
+            "deviceList": {
+                "windows": true,
+                "iOS": true,
+                "macOS": true,
+                "android": true
+            }
         }
         
     ]

@@ -49,7 +49,7 @@
           <div :class="{'product-item': true, 'first': index == 0}" v-for="(item,index) in productList" :key="index">
             <div class="corner-box">
                 <span class="icon" v-if="index == 0"></span>
-                <span class="text" v-if="index == 0">EDITOR'S CHOICE</span>
+                <span class="text" v-if="index == 0">Most Popular Antivirus</span>
               
                 <span class="text" v-if="index != 0">#</span>
                 <span class="num"  v-if="index != 0">{{index + 1 < 10 ? '0' + (index + 1) : (index + 1)}}</span>
@@ -116,10 +116,10 @@
             <div class="btn-box">
               <div class="btn-content">
                 <a :href="item.link" target="_blank" rel="noopener noreferrer nofollow" class="btn" @click="handleExe">
-                  <span class="text">VISIT SITE</span>
+                  <span class="text">Buy Now</span>
                   <span class="iconfont">&#xe65a;</span>
                 </a>
-                <a :href="item.freelink" v-if="item.freelink != ''" target="_blank" class="desc" rel="noopener noreferrer nofollow">FREE TRAIL</a>
+                <a :href="item.freelink" v-if="item.freelink != '' && item.promotion_info != ''" target="_blank" class="desc" rel="noopener noreferrer nofollow">{{item.promotion_info}}</a>
                
               </div>
               
@@ -149,7 +149,6 @@
       
       <section class="how-rate-area">
         <div class="how-rate-title-box">
-          <span class="btn">HOW WE WORKS</span>
           <h2 class="area-title">HOW DO WE RATE ANTIVIRUS</h2>
 
         </div>

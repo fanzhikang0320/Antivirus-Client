@@ -8,7 +8,7 @@
                 "link": "https://track.totalav.com",
                 "name": "totalav.com"
             },
-            "freelink": "https://track.totalav.com/5fc0ba7489e8d/click",
+            "freelink": "https://hotsale.featuredproduct.news/2d477833-27ba-47e1-a835-b737c7bab2f3",
             "reviews": 4228,
             "logo": "/public/client/data/img/total-av.png",
             "picture": "/public/client/data/img/total-av-p.png",
@@ -16,7 +16,8 @@
             "coop_pic": "/public/client/data/img/top.png",
             "price": "19.00",
             "history_price": "99",
-            "tags": "Limited time offer：80% off now",
+            "tags": "70% of our users choose Total AV this month!",
+            "promotion_info": "80% OFF Now",
             "slogan": "Best antivirus of 2021, providing excellent antivirus protection. Trusted by 25 million users around the world.",
             "aside_slogan": "Best antivirus of 2020，providing  excellent antivirus protection",
             "Protection_rate": {
@@ -59,25 +60,25 @@
                 "android": true
             }
         },
-        
         {
-            "name": "Norton",
+            "name": "McAfee",
             "key": "",
-            "link": "https://www.kqzyfj.com/click-100176895-13681576",
+            "link": "https://secureconv-dl.com/?a=126374&c=226356&mt=4",
             "website": {
-                "link": "https://www.kqzyfj.com",
-                "name": "norton.com"
+                "link": "",
+                "name": ""
             },
-            "freelink": "https://www.kqzyfj.com/click-100176895-13681576",
-            "reviews": 3923,
-            "logo": "/public/client/data/img/norton.png",
-            "picture": "/public/client/data/img/norton-p.png",
-            "aside_pic": "/public/client/data/img/norton-a.png",
+            "freelink": "https://secureconv-dl.com/?a=126374&c=226356&mt=4",
+            "reviews": 3825,
+            "logo": "/public/client/data/img/McAfee.png",
+            "picture": "/public/client/data/img/McAfee-p.png",
+            "aside_pic": "/public/client/data/img/McAfee-a.png",
             "coop_pic": "",
-            "price": "29.99",
+            "price": "24.99",
             "history_price": "10",
-            "tags": "$19.99/year today",
-            "slogan": "High accuracy, low-impact antivirus with online backup capabilities.",
+            "tags": "",
+            "promotion_info": "$29.99 for 10 devices",
+            "slogan": "Powerful security against numerous forms of online or offline fangers.",
             "aside_slogan": "",
             "Protection_rate": {
                 "score": "9.6",
@@ -89,64 +90,6 @@
             },
             "rate": {
                 "score": "9.5",
-                "max": 10
-            },
-            "meritList": [
-                {
-                    "text": "Advanced device security"
-                },
-                {
-                    "text": "60-days money-back guarantee"
-                },
-                {
-                    "text": "100% virus protection promise"
-                },
-                {
-                    "text": "Secure vpn for online privacy"
-                },
-                {
-                    "text": "Parental control"
-                },
-                {
-                    "text": "Dark web monitoring"
-                }
-            ],
-            "deviceList": {
-                "windows": true,
-                "iOS": true,
-                "macOS": true,
-                "android": true
-            }
-        },
-        {
-            "name": "McAfee",
-            "key": "",
-            "link": "https://secureconv-dl.com/?a=126374&c=226356&mt=4",
-            "website": {
-                "link": "",
-                "name": ""
-            },
-            "freelink": "",
-            "reviews": 3825,
-            "logo": "/public/client/data/img/McAfee.png",
-            "picture": "/public/client/data/img/McAfee-p.png",
-            "aside_pic": "/public/client/data/img/McAfee-a.png",
-            "coop_pic": "",
-            "price": "24.99",
-            "history_price": "10",
-            "tags": "",
-            "slogan": "Powerful security against numerous forms of online or offline fangers.",
-            "aside_slogan": "",
-            "Protection_rate": {
-                "score": "9.4",
-                "max": 10
-            },
-            "privacy_rate": {
-                "score": "9.5",
-                "max": 10
-            },
-            "rate": {
-                "score": "9.3",
                 "max": 10
             },
             "meritList": [
@@ -176,7 +119,65 @@
                 "android": true
             }
         },
-        
+        {
+            "name": "Norton",
+            "key": "",
+            "link": "https://www.kqzyfj.com/click-100176895-13681576",
+            "website": {
+                "link": "https://www.kqzyfj.com",
+                "name": "norton.com"
+            },
+            "freelink": "https://www.kqzyfj.com/click-100176895-13681576",
+            "reviews": 3923,
+            "logo": "/public/client/data/img/norton.png",
+            "picture": "/public/client/data/img/norton-p.png",
+            "aside_pic": "/public/client/data/img/norton-a.png",
+            "coop_pic": "",
+            "price": "29.99",
+            "history_price": "10",
+            "tags": "Best For Your Family",
+            "promotion_info": "",
+            "slogan": "High accuracy, low-impact antivirus with online backup capabilities.",
+            "aside_slogan": "",
+            "Protection_rate": {
+                "score": "9.5",
+                "max": 10
+            },
+            "privacy_rate": {
+                "score": "9.5",
+                "max": 10
+            },
+            "rate": {
+                "score": "9.3",
+                "max": 10
+            },
+            "meritList": [
+                {
+                    "text": "Advanced device security"
+                },
+                {
+                    "text": "60-days money-back guarantee"
+                },
+                {
+                    "text": "100% virus protection promise"
+                },
+                {
+                    "text": "Secure vpn for online privacy"
+                },
+                {
+                    "text": "Parental control"
+                },
+                {
+                    "text": "Dark web monitoring"
+                }
+            ],
+            "deviceList": {
+                "windows": true,
+                "iOS": true,
+                "macOS": true,
+                "android": true
+            }
+        },
         
         {
             "name": "BullGuard",
@@ -195,6 +196,7 @@
             "price": "30.00",
             "history_price": "10",
             "tags": "",
+            "promotion_info": "",
             "slogan": "Extremely light on CPU and quick scan.",
             "aside_slogan": "Extremely light on CPU and quick scan",
             "Protection_rate": {
@@ -250,6 +252,7 @@
             "price": "19.90",
             "history_price": "10",
             "tags": "",
+            "promotion_info": "",
             "slogan": "Get comprehensive protection for both Mac and PC.",
             "aside_slogan": "Get comprehensive protection for both Mac and PC",
             "Protection_rate": {
@@ -300,6 +303,7 @@
             "price": "29.99",
             "history_price": "10",
             "tags": "",
+            "promotion_info": "",
             "slogan": "Comprehensive antivirus solutions thar suites all your security needs.",
             "aside_slogan": "",
             "Protection_rate": {
@@ -350,6 +354,7 @@
             "price": "35.39",
             "history_price": "10",
             "tags": "",
+            "promotion_info": "",
             "slogan": "Powerful security against numerous forms of online or offline dangers.",
             "aside_slogan": "",
             "Protection_rate": {
@@ -392,6 +397,7 @@
             },
             "freelink": "",
             "reviews": 2546,
+
             "logo": "/public/client/data/img/pcprotect.png",
             "picture": "/public/client/data/img/pcprotect-p.png",
             "aside_pic": "/public/client/data/img/pcprotect-a.png",
@@ -399,6 +405,7 @@
             "price": "24.95",
             "history_price": "10",
             "tags": "",
+            "promotion_info": "",
             "slogan": "Award-winning antivirus, received 4.6/5 Trustscore on Trustpilot.",
             "aside_slogan": "Award-winning antivirus, received 4.6/5 Trustscore on Trustpilot.",
             "Protection_rate": {
@@ -452,6 +459,7 @@
             "price": "24.99",
             "history_price": "10",
             "tags": "",
+            "promotion_info": "",
             "slogan": "Perfect and highly capable Mac antivirus for an average mac OS user.",
             "aside_slogan": "",
             "Protection_rate": {
@@ -502,6 +510,7 @@
             "price": "49.90",
             "history_price": "10",
             "tags": "",
+            "promotion_info": "",
             "slogan": "Well-balanced security with powerful antivirus capabilities.",
             "aside_slogan": "",
             "Protection_rate": {

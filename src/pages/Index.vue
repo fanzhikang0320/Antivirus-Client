@@ -7,7 +7,7 @@
             <img src="@/assets/img/b-4.png" alt="">
             <span class="text">{{this.getTime(new Date(),'complete').month}} {{this.getTime(new Date(),'complete').year}}</span>
           </div>
-          <h1 class="website-title">TOP {{count}} ANTIVIRUS SOFTWARE</h1>
+          <h1 class="website-title">TOP {{allProduct.length}} ANTIVIRUS SOFTWARE</h1>
           <div class="describe">
             <p class="sub-title">Compare The Best Antivirus Solutions For Your Devices.</p>
             <p class="text">Protecting all your devices from unwanted viruses is vitally important, however it’s not always an easy task and can be time consuming and confusing. You should use antivirus software on all your devices including smartphones & tablets. We have compared some of the best antivirus software around so you don’t have to, we have included details of each company on various criteria from ease of use to value for money. Make sure you protect your computer before its too late as unwanted viruses can infect your computer putting your personal files at risk. </p>
@@ -57,7 +57,10 @@
               
             </div>
             <div class="img-box">
-              <img :src="item.picture" :alt="item.name" class="logo">
+              <a :href="item.link" target="_blank" rel="noopener noreferrer nofollow" class="logo-link" style="text-decoration:none;">
+              
+                <img :src="item.picture" :alt="item.name" class="logo">
+              </a>
               <div class="phone-info-box">
                 <span class="tags" v-if="item.tags != ''">{{item.tags}}</span>
                 <h3 class="name">{{item.name}}</h3>
@@ -72,7 +75,9 @@
             </div>
             <div class="info-box">
               <div class="name-box">
-                <h3 class="name">{{item.name}}</h3>
+                <h3 class="name">
+                  <a :href="item.link" target="_blank" rel="noopener noreferrer nofollow" class="link-name">{{item.name}}</a>
+                </h3>
                 <span class="tags" v-if="item.tags != ''">{{item.tags}}</span>
               </div>
               <h6 class="attr-list-title">FEATURES & DEVICES</h6>
@@ -90,8 +95,8 @@
                 <dd :class="{'nonsupport': !item.deviceList.android}"><span class="iconfont android " title="Android">&#xe690;</span></dd>
               </dl>
             </div>
-            <div class="rate-box">
-              <div class="rate-content">
+            <div class="rate-box" @mouseleave="closeHideContent(index)">
+              <div class="rate-content" @click="showHideContent(index)">
                 <div class="score-container">
                   <span class="score">{{item.rate.score}}</span>
                     <div class="star-container">
@@ -103,6 +108,9 @@
                   </div>
                 <span class="reviews">Based on {{item.reviews}} reviews</span>
                 
+              </div>
+              <div class="hide-content">
+                <p class="text">The score is depending on : our editors' test on the features, ease of use and price, users' review from Trustpilot and other platforms.</p>
               </div>
               <div class="bottom-btn" v-if="item.reviewId">
                 <router-link :to="{name: 'review', query: {productId: item.reviewId}}" class="review-link">
@@ -116,7 +124,7 @@
             <div class="btn-box">
               <div class="btn-content">
                 <a :href="item.link" target="_blank" rel="noopener noreferrer nofollow" class="btn" @click="handleExe">
-                  <span class="text">Buy Now</span>
+                  <span class="text">CHECK PRICE</span>
                   <span class="iconfont">&#xe65a;</span>
                 </a>
                 <a :href="item.freelink" v-if="item.freelink != '' && item.promotion_info != ''" target="_blank" class="desc" rel="noopener noreferrer nofollow">{{item.promotion_info}}</a>
@@ -124,6 +132,10 @@
               </div>
               
             </div>
+          </div>
+          <div class="load-box">
+            <button @click="loadMore" v-if="this.productList.length != this.allProduct.length">VIEW MORE PRODUCTS</button>
+            <button @click="closeMore" v-else>CLOSE</button>
           </div>
         </div>
       </section>
@@ -339,7 +351,10 @@ export default {
     return {
       score: 5,
       count: 0, //  产品数量
+      allProduct:[],
       productList: [],
+      limit: 0,
+      offset: 5,
       topList: [],
       vpnsList: [],
       faqList: [],
@@ -473,19 +488,46 @@ export default {
             })
           });
 
-          this.productList=  productData.data.data;
+          this.allProduct = productData.data.data;
+          this.productList=  productData.data.data.slice(0,5);
+          // this.count = this.productList.length;
           this.topList = productData.data.data.slice(0,3);
 
         }))
         .catch(err => {
           this.$router.push({name: 'error'});
         })
+    },
+    loadMore() {
+      if (this.productList.length == this.allProduct.length) {
+
+      } else {
+        this.productList = this.allProduct;
+      }
+    },
+    closeMore() {
+      this.productList = this.allProduct.slice(0,5)
+    },
+    showHideContent(index) {
+      if (window.screen.width <= 750) return;
+
+      $('.product-item .rate-box .hide-content').eq(index).css({
+        display: 'block'
+      }).animate({
+        opacity: 1
+      })
+    },
+    closeHideContent(index) {
+      $('.product-item .rate-box .hide-content').eq(index).animate({
+        opacity: 0
+      },function () {
+        $(this).css({
+          display: 'none'
+        })
+      })
     }
   },
-  
-  mounted() {
-    this.getProductList();
-
+  created() {
     // 获取问题
     getFaq().then(res => {
       this.faqList = res.data.data;
@@ -521,7 +563,10 @@ export default {
     }).catch(err => {
       console.log(err);
     })
-    
+  },
+  mounted() {
+    this.getProductList();
+
     this.showStep(this.field);
 
   }

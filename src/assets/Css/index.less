@@ -159,6 +159,24 @@
             }
 
             .product-list {
+                .load-box {
+                    text-align: center;
+                    margin-top: 60px;
+
+                    button  {
+                        width: 265px;
+                        height: 50px;
+                        background-color: #ff8327;
+                        font-family: 'Montserrat-bold';
+                        border-radius: 6px;
+                        color: #fff;
+                        font-size: 18px;
+                        outline: none;
+                        cursor: pointer;
+                        border: none;
+                    }
+                   
+                }
                 .product-item {
                     position: relative;
                     display: flex;
@@ -303,7 +321,12 @@
                                 font-weight: normal;
                                 font-family: 'CeraPro-Bold';
                                 font-size: 30px;
-                                color: #1b273b;
+                                
+
+                                .link-name {
+                                    text-decoration: none;
+                                    color: #1b273b;
+                                }
                             }
 
                             .tags {
@@ -382,7 +405,7 @@
                     
                     }
                     .rate-box {
-                        // width: 240px;
+                        position: relative;
                         display: flex;
                         flex-direction: column;
                         flex: 18;
@@ -460,6 +483,27 @@
                                         transform: translateX(4px);
                                     }
                                 }
+                            }
+                            
+                        }
+
+                        .hide-content {
+                            display: none;
+                            opacity: 0;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            font-family: 'CeraPro-Medium';
+                            padding: 0 20px;
+                            font-size: 18px;
+                            color: #fff;
+                            background-color: rgba(34, 31, 31, 0.8);
+                            box-sizing: border-box;
+
+                            .text {
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
                             }
                             
                         }

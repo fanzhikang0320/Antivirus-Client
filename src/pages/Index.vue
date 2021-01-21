@@ -88,7 +88,7 @@
                 </li>
               </ul>
               <dl class="device-list">
-                <dt>COMPATIBLE DEVICES</dt>
+                <!-- <dt>COMPATIBLE DEVICES</dt> -->
                 <dd :class="{'nonsupport': !item.deviceList.windows}"><span class="iconfont" title="Windows">&#xe898;</span></dd>
                 <dd :class="{'nonsupport': !item.deviceList.macOS}"><span class="iconfont apple" title="MacOS">&#xe61b;</span></dd>
                 <dd :class="{'nonsupport': !item.deviceList.iOS}"><span class="iconfont ios" title="iOS">&#xe734;</span></dd>
@@ -134,7 +134,7 @@
             </div>
           </div>
           <div class="load-box">
-            <button @click="loadMore" v-if="this.productList.length != this.allProduct.length">VIEW MORE PRODUCTS</button>
+            <button @click="loadMore" v-if="this.productList.length != this.allProduct.length">VIEW MORE ANTIVIRUS</button>
             <button @click="closeMore" v-else>CLOSE</button>
           </div>
         </div>

@@ -50,6 +50,7 @@ export default {
     },
     methods: {
         showAlert() {
+            if (window.screen.width <= 750) { return false; }
             $('.mask-wrapper').css({
                 display: 'block'
             })

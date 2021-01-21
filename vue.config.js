@@ -1,4 +1,5 @@
 const path = require('path')
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 module.exports = {
 	publicPath: process.env.NODE_ENV == 'production'? '/public/client' : '/',
 	productionSourceMap: false,
@@ -13,8 +14,10 @@ module.exports = {
         }
     },
 	chainWebpack: config => {
-		const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
-		types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))
+		const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
+		types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)));
+
+		// config.plugin('webpack-bundle-analyzer').use(BundleAnalyzerPlugin)
 	}
 }
 function addStyleResource(rule) {

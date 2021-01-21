@@ -61,65 +61,6 @@
             }
         },
         {
-            "name": "McAfee",
-            "key": "",
-            "link": "https://secureconv-dl.com/?a=126374&c=226356&mt=4",
-            "website": {
-                "link": "",
-                "name": ""
-            },
-            "freelink": "https://secureconv-dl.com/?a=126374&c=226356&mt=4",
-            "reviews": 3825,
-            "logo": "/public/client/data/img/McAfee.png",
-            "picture": "/public/client/data/img/McAfee-p.png",
-            "aside_pic": "/public/client/data/img/McAfee-a.png",
-            "coop_pic": "",
-            "price": "24.99",
-            "history_price": "10",
-            "tags": "Best For Your Family",
-            "promotion_info": "$29.99 for 10 devices",
-            "slogan": "Powerful security against numerous forms of online or offline fangers.",
-            "aside_slogan": "",
-            "Protection_rate": {
-                "score": "9.6",
-                "max": 10
-            },
-            "privacy_rate": {
-                "score": "9.5",
-                "max": 10
-            },
-            "rate": {
-                "score": "9.5",
-                "max": 10
-            },
-            "meritList": [
-                {
-                    "text": "Fix security issues on PCs remotely"
-                },
-                {
-                    "text": "Prevent scam attempts from reaching you"
-                },
-                {
-                    "text": "Clean up and optimize your computer"
-                },
-                {
-                    "text": "Prevent and revocer from identity theft"
-                },
-                {
-                    "text": "Protects your usernames and passwords"
-                },
-                {
-                    "text": "Award-winning detection features"
-                }
-            ],
-            "deviceList": {
-                "windows": true,
-                "iOS": true,
-                "macOS": true,
-                "android": true
-            }
-        },
-        {
             "name": "Norton",
             "key": "",
             "link": "https://www.kqzyfj.com/click-100176895-13681576",
@@ -135,8 +76,8 @@
             "coop_pic": "",
             "price": "29.99",
             "history_price": "10",
-            "tags": "",
-            "promotion_info": "",
+            "tags": "Special Offer Now",
+            "promotion_info": "$19.99/year",
             "slogan": "High accuracy, low-impact antivirus with online backup capabilities.",
             "aside_slogan": "",
             "Protection_rate": {
@@ -148,7 +89,7 @@
                 "max": 10
             },
             "rate": {
-                "score": "9.3",
+                "score": "9.5",
                 "max": 10
             },
             "meritList": [
@@ -178,7 +119,65 @@
                 "android": true
             }
         },
-        
+        {
+            "name": "McAfee",
+            "key": "",
+            "link": "https://secureconv-dl.com/?a=126374&c=226356&mt=4",
+            "website": {
+                "link": "",
+                "name": ""
+            },
+            "freelink": "https://secureconv-dl.com/?a=126374&c=226356&mt=4",
+            "reviews": 3825,
+            "logo": "/public/client/data/img/McAfee.png",
+            "picture": "/public/client/data/img/McAfee-p.png",
+            "aside_pic": "/public/client/data/img/McAfee-a.png",
+            "coop_pic": "",
+            "price": "24.99",
+            "history_price": "10",
+            "tags": "Best For Your Family",
+            "promotion_info": "$29.99 for 10 devices",
+            "slogan": "Powerful security against numerous forms of online or offline fangers.",
+            "aside_slogan": "",
+            "Protection_rate": {
+                "score": "9.6",
+                "max": 10
+            },
+            "privacy_rate": {
+                "score": "9.5",
+                "max": 10
+            },
+            "rate": {
+                "score": "9.3",
+                "max": 10
+            },
+            "meritList": [
+                {
+                    "text": "Fix security issues on PCs remotely"
+                },
+                {
+                    "text": "Prevent scam attempts from reaching you"
+                },
+                {
+                    "text": "Clean up and optimize your computer"
+                },
+                {
+                    "text": "Prevent and revocer from identity theft"
+                },
+                {
+                    "text": "Protects your usernames and passwords"
+                },
+                {
+                    "text": "Award-winning detection features"
+                }
+            ],
+            "deviceList": {
+                "windows": true,
+                "iOS": true,
+                "macOS": true,
+                "android": true
+            }
+        },
         {
             "name": "BullGuard",
             "key": "",

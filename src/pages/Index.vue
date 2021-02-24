@@ -59,7 +59,7 @@
             <div class="img-box">
               <a :href="item.link" target="_blank" rel="noopener noreferrer nofollow" class="logo-link" style="text-decoration:none;">
               
-                <img :src="item.picture" :alt="item.name" class="logo">
+                <img  v-lazy="item.picture" :alt="item.name" class="logo">
               </a>
               <div class="phone-info-box">
                 <span class="tags" v-if="item.tags != ''">{{item.tags}}</span>
@@ -144,8 +144,8 @@
         <h2 class="area-title">TOP 3 ANTIVIRUS</h2>
         <ul class="card-list">
           <li class="card-item" v-for="(item,index) in topList" :key="index">
-            <img :src="item.logo" :alt="item.name" class="logo">
-            <img :src="item.picture" :alt="item.name" class="picture">
+            <img v-lazy="item.logo" :alt="item.name" class="logo">
+            <img v-lazy="item.picture" :alt="item.name" class="picture">
             <Rate allow-half disabled :value="Number(conversionScore(item.rate.score,item.rate.max))" class="my-rate"/>
             <p class="reviews">Based on {{item.reviews}} reviews</p>
             <p class="describe">{{item.slogan}}</p>
@@ -265,7 +265,7 @@
 
         <div class="blog-list">
           <div class="blog-item" v-for="(item,index) in blogList" :key="index" @click="openBlogDetail(item.id)">
-            <img :src="item.picture" alt="" class="pic">
+            <img v-lazy="item.picture" alt="" class="pic">
             <div class="blog-container">
               <div class="info">
                 <span class="name">JAN SMITH</span>
@@ -466,6 +466,7 @@ export default {
               productData = res2;
 
           productData.data.data.forEach(ele => {
+            ele.picture = 'https://www.thebestantivirus.news/' + ele.picture;
             if (ele.key == 'totalav') {
 
               if (typeof gclid != 'undefined') {

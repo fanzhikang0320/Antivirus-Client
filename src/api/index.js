@@ -3,15 +3,15 @@ import axios from '@/plugins/axios'
 /**
  * 获取推荐的VPN
  */
-export const getVPNs = () => axios.get('/public/client/data/vpns.json');
+export const getVPNs = () => axios.get('/data/vpns.json');
 
 /**
  * 获取所有产品信息
  */
-export const getProduct = () => axios.get('/public/client/data/product.json');
+export const getProduct = () => axios.get('/data/product.json');
 
 // 获取所有问题信息
-export const getFaq = () => axios.get('/public/client/data/question.json');
+export const getFaq = () => axios.get('/data/question.json');
 // 获取博客
 export const getBlog = (offset,limit) => axios.get('/articleApi/getArticle',{params: {offset,limit}})
 // 查询有几篇review

@@ -2,8 +2,8 @@
  <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide card-item" v-for="(item,index) in list" :key="index">
-            <img :src="item.logo" :alt="item.name" class="logo">
-            <img :src="item.picture" :alt="item.name" class="picture">
+            <img v-lazy="item.logo" :alt="item.name" class="logo">
+            <img v-lazy="item.picture" :alt="item.name" class="picture">
             <Rate allow-half disabled :value="5" class="my-rate"/>
             <p class="reviews">Based on {{item.reviews}} reviews</p>
             <p class="describe">{{item.slogan}}</p>

@@ -9,6 +9,15 @@ import 'view-design/dist/styles/iview.css';
 import Star from '@/components/Star'
 import VueMetaInfo from 'vue-meta-info'
 import 'swiper/swiper.min.css'
+import VueLazyload from 'vue-lazyload'
+
+Vue.use(VueLazyload,{
+  preLoad: 1.3,
+  error: '',
+  loading: '',
+  attempt: 1,
+  listenEvents: [ 'scroll' ]
+});
 Vue.use(VueMetaInfo);
 Vue.use(Loading);
 Vue.use(Star);

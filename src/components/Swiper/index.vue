@@ -4,7 +4,7 @@
           <div class="swiper-main">
             <div class="swiper-item" v-for="(item,index) in list" :style="item.sty" :key="index">
                 <div class="img-box">
-                  <img :src="item.logo" :alt="item.name" class="logo">
+                  <img v-lazy="item.logo" :alt="item.name" class="logo">
                 </div>
                 <Rate class="my-rate" disabled allow-half :value="Number(conversionScore(item.rate.score,item.rate.max))" />
                 

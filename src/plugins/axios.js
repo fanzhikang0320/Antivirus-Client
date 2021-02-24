@@ -1,10 +1,10 @@
 import axios from 'axios'
 import { loading } from '../components/Loading';
 
-// const instance = axios.create({
-//   baseURL: 'https://www.thebestantivirus.news'
-// })
-const instance = axios.create({});
+const instance = axios.create({
+  baseURL: 'https://www.thebestantivirus.news'
+})
+// const instance = axios.create({});
 let num = 0;
 // 添加请求拦截器
 instance.interceptors.request.use(function (config) {

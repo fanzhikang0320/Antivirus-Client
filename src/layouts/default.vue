@@ -47,7 +47,8 @@ header {
   left: 50%;
   width: 100%;
   transform: translateX(-50%);
-  background-color: #132036;
+  // background-color: #132036;
+  background-color: #393c41;
   box-shadow: 0px 2px 8px rgba(0,0,0,.16);
 }
 main {
@@ -56,12 +57,13 @@ main {
   width: 100%;
   // min-height: ~ 'calc(100% - 286px)';
   background-color: #f7fafc;
+  // background-color: #e8e9eb;
 
   @media screen and (max-width: 750px) {
     padding-top: 64px;
   }
 }
 footer {
-  background-color: #132036;
+  background-color: #393c41;
 }
 </style>

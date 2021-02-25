@@ -2,10 +2,11 @@
   <div class="home">
     <div class="home-bg-1"></div>
     <div class="main-container">
+      
       <section class="banner-area">
         <div class="banner-content">
           <div class="tags">
-            <img src="@/assets/img/index-b-4.png" alt="">
+            <img src="@/assets/img/new-b-4.png" alt="">
             <span class="text">{{this.getTime(new Date(),'complete').month}} {{this.getTime(new Date(),'complete').year}}</span>
           </div>
           <h1 class="website-title">TOP {{allProduct.length}} ANTIVIRUS SOFTWARE</h1>
@@ -15,21 +16,21 @@
           </div>
           <ul class="list">
             <li>
-              <img src="@/assets/img/index-b-3.png" alt="">
+              <img src="@/assets/img/new-b-3.png" alt="">
               <span class="text">ANTI MALWARE</span>
             </li>
             <li>
-              <img src="@/assets/img/index-b-2.png" alt="">
+              <img src="@/assets/img/new-b-2.png" alt="">
               <span class="text">ANTI SPYWAARE</span>
             </li>
             <li>
-              <img src="@/assets/img/index-b-1.png" alt="">
+              <img src="@/assets/img/new-b-1.png" alt="">
               <span class="text">INTERNET SECURITY</span>
             </li>
           </ul>
         </div>
         <div class="banner-img">
-          <img src="@/assets/img/banner-index.png" alt="">
+          <img src="@/assets/img/banner-new-index.png" alt="">
         </div>
       </section>
       <section class="product-area">
@@ -160,9 +161,11 @@
         <PhoneSwiper :list="topList"/>
       </section>
       
-    </div>
-    <div class="main-container main-container-2">
+      </div>
+      <div class="main-container main-container-2">
         <div class="main-wrapper">
+
+        
           <section class="how-rate-area">
             <div class="how-rate-title-box">
               <h2 class="area-title">HOW DO WE RATE ANTIVIRUS</h2>
@@ -331,7 +334,8 @@
             
           </section>
         </div>
-      </div>
+    </div>
+    
     <section class="swiper-area"> 
         <h2 class="area-title">WE ALSO RECOMMEND VPN SERVICE TO PROTECT YOUR ONLINE SAFETY</h2>
         <h2 class="phone-area-title">RECOMMEND VPN</h2>
@@ -581,5 +585,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url('../assets/css/index.less');
+@import url('../assets/css/newIndex.less');
 </style>

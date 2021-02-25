@@ -29,6 +29,11 @@ const routes = [
         component: () => import('@/pages/Index.vue')
       },
       {
+        path: 'new_index',
+        name: 'newHome',
+        component: () => import('@/pages/NewIndex.vue')
+      },
+      {
         path: 'about',
         name: 'about',
         component: () => import('@/pages/About.vue')
